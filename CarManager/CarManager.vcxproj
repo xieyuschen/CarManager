@@ -138,7 +138,6 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="ColumnName.h" />
     <ClInclude Include="DataConvert.h" />
     <ClInclude Include="Info.h" />
   </ItemGroup>

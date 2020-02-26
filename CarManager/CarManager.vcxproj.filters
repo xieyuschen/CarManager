@@ -21,9 +21,6 @@
     <ClInclude Include="Info.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="ColumnName.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Source.cpp">

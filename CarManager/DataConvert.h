@@ -1,5 +1,6 @@
+#ifndef DATACONVERT_H
 #define DATACONVERT_H
-#ifdef DATACONVERT_H
+
 #include<string>
 #include<vector>
 #include<list>
@@ -31,9 +32,11 @@ public:
 	//返回数据表列数
 	list<vector<string>> GetData();
 	void UpdateFile();
-private:
+
 	vector<string> title;
 	list<vector<string>> data;
+private:
+
 	size_t column;
 	string filename;
 };

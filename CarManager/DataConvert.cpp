@@ -16,7 +16,7 @@ DataConvert::DataConvert(string _filename)
 		istringstream sin(line);
 		if (!flag++)
 		{
-			while (getline(sin, temp, '\t'))
+			while (getline(sin, temp, ','))
 			{
 				title.push_back(temp);
 			}
@@ -24,7 +24,7 @@ DataConvert::DataConvert(string _filename)
 		else
 		{
 			vector<string> vec;
-			while (getline(sin, temp, '\t'))
+			while (getline(sin, temp, ','))
 			{
 				vec.push_back(temp);
 			}

@@ -1,5 +1,7 @@
+
+#ifndef INFO_H
 #define INFO_H
-#ifdef INFO_H
+
 #include<string>
 #include<vector>
 #include<list>
@@ -12,7 +14,8 @@ public:
 	Info(vector<string>&,list<vector<string>>&);
 	~Info();
 	void Add(vector<string> t);
-	void Search();
+	list<vector<string>>  Search(int num,string);
+	list<vector<string>>  Search(int num, string key, bool cryptic);
 	void Delete();
 	void Create();
 private:
