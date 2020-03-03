@@ -6,17 +6,19 @@
 #include<vector>
 #include<list>
 #include<iostream>
-#include"DataConvert.h"
-//我先假定用户输入的不可能有错误
+#include"CsvReader.h"
+
 class Info
 {
 public:
 	Info(vector<string>&,list<vector<string>>&);
 	~Info();
 	void Add(vector<string> t);
-	list<vector<string>>  Search(int num,string);
-	list<vector<string>>  Search(int num, string key, bool cryptic);
-	void Delete();
+	list<vector<string>>  Search(int,const string&);
+	list<vector<string>>  Search(int ,const string&, bool);
+	//查询发生在时间范围内的记录
+	list<vector<string>> Search(const string& starttime,const string& endtime);
+	void Delete(); 
 	void Create();
 private:
 	vector<string> title;

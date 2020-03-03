@@ -138,13 +138,13 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="DataConvert.h" />
+    <ClInclude Include="CsvReader.h" />
     <ClInclude Include="Info.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="DataConvert.cpp" />
+    <ClCompile Include="CsvReader.cpp" />
     <ClCompile Include="Info.cpp" />
-    <ClCompile Include="Source.cpp" />
+    <ClCompile Include="main.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

@@ -18,12 +18,15 @@ void Info::Add(vector<string> a) {
 	}
 }
 
-list<vector<string>> Info::Search(int i, string key, bool cryptic) {
-	int j = i;
+list<vector<string>> Info::Search(int i,const string& key, bool cryptic) 
+{
+
 	list<vector<string>> temp;
 	if (cryptic) {
-		for (vector<string> piece : data) {
-			if (piece[j].find(key) != string::npos) {
+		for (vector<string> piece : data) 
+		{
+			if (piece[i].find(key) != string::npos) 
+			{
 				temp.push_back(piece);
 			}
 		}
@@ -31,16 +34,36 @@ list<vector<string>> Info::Search(int i, string key, bool cryptic) {
 	else
 	{
 		for (vector<string> piece : data) {
-			if (piece[j] == key) {
+			if (piece[i] == key) {
 				temp.push_back(piece);
 			}
 		}
 	}
 	return temp;
 }
-list<vector<string>> Info::Search(int i, string) {
-	list<vector<string>> a;
-	return a;
+list<vector<string>> Info::Search(int i,const string& key) {
+	list<vector<string>> temp;
+	for (vector<string> piece : data) {
+		if (piece[i].find(key) != string::npos) {
+			temp.push_back(piece);
+		}
+	}
+	return temp;
+}
+list<vector<string>> Info::Search(const string& starttime,const string& endtime) {
+	list<vector<string>> temp;
+	if (title[5] == "取车时间") {
+		for (auto item : data) {
+			if (item[5] > starttime&& item[5] < endtime) {
+				temp.push_back(item);
+			}
+		}
+		return temp;
+	}
+	else {
+		throw new exception();
+	}
+	
 }
 void Info::Delete() {};
 void Info::Create() {};

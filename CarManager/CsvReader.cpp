@@ -1,10 +1,10 @@
 #include<string>
 #include<vector>
 #include<list>
-#include"DataConvert.h"
+#include"CsvReader.h"
 #include<fstream>
 #include<sstream>
-DataConvert::DataConvert(string _filename)
+CsvReader::CsvReader(string _filename)
 {
 	filename = _filename;
 	ifstream fin(_filename);
@@ -33,19 +33,19 @@ DataConvert::DataConvert(string _filename)
 	}
 	column = title.size();
 }
-DataConvert::~DataConvert()
+CsvReader::~CsvReader()
 {
 }
-size_t  DataConvert::GetColumnnum() {
+size_t  CsvReader::GetColumnnum() {
 	return column;
 }
-vector<string> DataConvert::GetTitle() {
+vector<string> CsvReader::GetTitle() {
 	return title;
 }
-list<vector<string>> DataConvert::GetData() {
+list<vector<string>> CsvReader::GetData() {
 	return data;
 }
-void DataConvert::UpdateFile() {
+void CsvReader::UpdateFile() {
 	ofstream fout(filename);
 	for (auto a : title)
 		fout << a << ',';
