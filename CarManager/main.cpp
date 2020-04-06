@@ -6,10 +6,14 @@
 #include"CsvReader.h"
 #include"Info.h"
 #include<Windows.h>
+#include<regex>
 using namespace std;
 int main() {
-	MessageBox(NULL, TEXT("Finden eine freundin nicht!"), TEXT("Warning"), MB_OK);
-
+	string test = "dog hello cat car target";
+	regex r("^car");
+	smatch results;
+	regex_search(test, results, r);
+	cout << results.str();
 }
 
 
