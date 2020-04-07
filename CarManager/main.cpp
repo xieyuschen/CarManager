@@ -12,9 +12,10 @@ int main() {
 	//这里的序号是子正则式的序号
 	string fmt = "$2.$6.$8";
 	//这里单斜杠都要写成双斜杠，进行转义
-	string phone = "(\\()?(\\d{3})(\\))?([-. ])?(\\s)?(\\d{3})([-. ])?(\\d{4})";
+	string phone = "(\\()?(\\d{3})(\\))?([-|. ])?(\\s)?(\\d{3})([-|.])?(\\d{4})";
 	regex r(phone);
 	string s;
+ 	
 	while (getline(cin, s)) {
 		cout << regex_replace(s, r, fmt)<<endl;
 	}
