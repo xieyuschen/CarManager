@@ -19,10 +19,7 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="regexpra.cpp" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="regexpra.h" />
+    <ClCompile Include="question2.cpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
