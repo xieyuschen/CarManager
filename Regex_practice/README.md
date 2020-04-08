@@ -210,7 +210,28 @@ int main() {
 }
 ```
 ## 5. Huaskies球队球员相互传球的情况
-
+```cpp
+int main() {
+	ifstream infile("passingevents.xls");
+	ofstream outfile("passingtimes.xls");
+	string s;
+	map<pair<string, string>, int> dic;
+	smatch results;
+	string con = "^\\d*\tHuskies\t(Huskies_\\w*)\t(Huskies_\\w*)";
+	regex r(con);
+	while (getline(infile, s)) {
+		regex_search(s, results, r);
+		if (!results.empty()) {
+			auto& nos = dic[std::make_pair(results[1], results[2])];
+			++nos;
+		}
+	}
+	//map<pair<string, string>,int>::iterator can replaced by auto 
+	for (map<pair<string, string>,int>::iterator it = dic.begin(); it != dic.end(); ++it) {
+		outfile << it->first.first << "\t" << it->first.second << "\t" << it->second << endl;
+	}
+}
+```
 # 遇到的问题：
 ## 1.对xls数据的处理
 首先知道xls数据使用C++的时候每个单元格之间是用`,`逗号隔开的。  
@@ -255,3 +276,15 @@ auto& nos = dic[pair<string,string>(result[2],result[4])];
 
 ### 如果三个值形成一个主键怎么办？
 额这个之后再讨论，其实pair的使用我是一点都不熟悉，之后要去学习一下。
+
+
+## 正则的子表达式如何定位？
+对于重复匹配多次的子式，那么它会按照一个子式来计算并且值为最后一个重复的。  
+举个例子：如下正则表达式`\\d*\tHuskies\t(\\w*_\\w*\t){2}`，那么在匹配的时候被认为只有一个子式。
+调试效果如图：  
+![](Images/2.png)  
+当输入值为`"1\tHuskies\tHuskies_D1\tHuskies_F1\t1H\t46.323501\tHead pass\t34\t97\t59\t95"`时，第一个子式是`Huskies_F1`.  
+ 如果想要两个子式，就要把子式分开写。
+
+## Microsoft C++ exception: std::regex_error 
+这个错误就是正则表达式写错了，所以报了这个错。
