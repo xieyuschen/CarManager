@@ -15,8 +15,6 @@ int main() {
 	fstream file("passingevents.xls");
 	ofstream outfile("PlayerOper.xls");
 	string s;
-
-	getline(file, s);
 	smatch result;
 	map<pair<string,string>, int> dic;
 	string line = "^(\\w*\t){2}(Huskies_\\w\\d{1,2})\t(\\w*[_|.]?\\w*\t){3}(\\w* \\w*)\t";

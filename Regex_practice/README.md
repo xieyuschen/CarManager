@@ -186,7 +186,29 @@ for (auto it = dic.begin(); it != dic.end(); ++it) {
 }
 ```
 ## 4. Huaskies球队球员所做的动作
-
+```cpp
+int main() {
+	fstream file("passingevents.xls");
+	ofstream outfile("PlayerOper.xls");
+	string s;
+	smatch result;
+	map<pair<string,string>, int> dic;
+	string line = "^(\\w*\t){2}(Huskies_\\w\\d{1,2})\t(\\w*[_|.]?\\w*\t){3}(\\w* \\w*)\t";
+	regex r(line);
+	while (getline(file, s))
+	{
+		regex_search(s, result, r);
+		if (!result.empty())
+		{
+			auto& nos = dic[pair<string,string>(result[2],result[4])];
+			++nos;
+		}
+	}
+	for (auto it = dic.begin(); it != dic.end(); ++it) {
+		outfile << it->first.first << "\t" <<it->first.second<< "\t" << it->second << endl;
+	}
+}
+```
 ## 5. Huaskies球队球员相互传球的情况
 
 # 遇到的问题：
