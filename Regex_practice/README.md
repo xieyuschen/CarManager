@@ -164,9 +164,29 @@ while (getline(file, s))
 		outfile << s << endl;
 }
 ```
-嗯这里从头开始匹配速度瞬间上来了，老子哭了。这说明影响速度的主要因素是正则表达式的书写。
+嗯这里从头开始匹配速度瞬间上来了，老子哭了。这说明影响速度的主要因素是正则表达式的书写。  
+在此语境下我只需要从头匹配就可以了，不需要对后面的进行进一步的匹配，所以说一定要加上`^`从头匹配，这样就不需要在一个字符串里截取进行不断匹配了。
 ## 3，求Huaskies球队每名队员出场的总次数
+选择合适的数据结构map，然后进行一波筛选就可以了。
+```cpp
+//Time cost: 12.4922s
+string line = "^(\\d{1,2})\t.*\t(Huskies_\\w\\d{1,2})";
+regex r(line);
+while (getline(file, s))
+{
+	regex_search(s, result, r);
+	if (!result.empty())
+	{
+		auto& nos = dic[result[2]];
+		nos.insert(result[1]);
+	}
+}
+for (auto it = dic.begin(); it != dic.end(); ++it) {
+	outfile << it->first << "\t" << it->second.size() << endl;
+}
+```
 ## 4. Huaskies球队球员所做的动作
+
 ## 5. Huaskies球队球员相互传球的情况
 
 # 遇到的问题：
