@@ -222,3 +222,14 @@ cout << "花费了"
 ## map的`[]`运算符
 >Notice how the last access (to element 'd') inserts a new element in the map with that key and initialized to its default value (an empty string) even though it is accessed only to retrieve its value. Member function map::find does not produce this effect.
 如果map里面有这个值，那么就返回对应值。没有值那么就将这个值作为键加入map，值根据对应类型默认初始化。
+
+## map<T1,T2>中，如果键值为两个值共同构成要怎么写？
+使用`std::pair`就可以了。  
+```cpp
+map<pair<string,string>, int> dic;
+auto& nos = dic[pair<string,string>(result[2],result[4])];
+++nos;
+```
+
+### 如果三个值形成一个主键怎么办？
+额这个之后再讨论，其实pair的使用我是一点都不熟悉，之后要去学习一下。
