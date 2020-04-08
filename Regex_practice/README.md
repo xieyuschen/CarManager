@@ -232,6 +232,32 @@ int main() {
 	}
 }
 ```
+
+
+## 6. 从fullevents中匹配出所有关于Huskies球队的信息，要求将球员中的Huskies前缀去掉。
+```cpp
+#include<regex>
+#include<fstream>
+#include<string>
+using namespace std;
+int main() {
+	ifstream infile("passingevents.xls");
+	ofstream outfile("1.xls");
+	string s;
+	smatch result;
+	map<pair<string, string>, int> dic;
+	string format = "$1$3$5$6";
+	string con = "^(\\d{1,2}\tHuskies\t)(Huskies_)(\\w*\t)(Huskies_)(\\w*\t)(.*)";
+	regex r(con);
+	while (getline(infile, s)) {
+		regex_search(s, result, r);
+		if (!result.empty()) {
+			outfile << regex_replace(s, r, format) << endl;
+		}
+	}
+
+}
+```
 # 遇到的问题：
 ## 1.对xls数据的处理
 首先知道xls数据使用C++的时候每个单元格之间是用`,`逗号隔开的。  
@@ -288,3 +314,6 @@ auto& nos = dic[pair<string,string>(result[2],result[4])];
 
 ## Microsoft C++ exception: std::regex_error 
 这个错误就是正则表达式写错了，所以报了这个错。
+
+## regex_replace函数：
+这个函数将**与正则匹配的字符串进行替换**，如果不匹配的话就不对字符串做任何处理，直接返回源字符串。
