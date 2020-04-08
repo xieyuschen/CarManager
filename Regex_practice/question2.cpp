@@ -19,16 +19,17 @@ int main() {
 	map<string, vector<string>> dic;
 	getline(file, s);
 
-	int i = 0;
-	while (getline(file, s)&&i<10) {
+	while (getline(file, s)) {
 		regex_search(s, result, r);
 		if (!result.empty()) {
 			auto& nos = dic[result[2]];
 			nos.push_back(s);
 		}
-		i++;
 	}
-
+	for (auto it = dic.begin(); it != dic.end(); ++it) {
+		for (auto a : it->second)outfile << a << endl;
+		outfile<< endl << endl;
+	}
 	auto end = system_clock::now();
 	auto duration = duration_cast<microseconds>(end - start);
 	cout << "time cost: "

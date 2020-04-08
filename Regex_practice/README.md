@@ -108,9 +108,63 @@ for (sregex_iterator it(s.begin(), s.end(), r), end; it != end; ++it) {
 事实证明这样的速度并不是特别快。
 ## 2. 从fullevents数据中筛选出除Huaskies队伍外其他队伍的信息，要求在一个文件
 首先考虑设计问题，要求剩下的队伍在一个文件里面，那么筛选对于每个队伍都将整歌文件数据遍历一遍是一个不明智的选择，有5只队伍就要遍历5遍，那如果要有1000支队伍怎么办？所以说采取一遍遍历，将对应队伍的信息储存在一个合适的数据结构中去，再输出到文件里去。  
-采取什么样的数据结构较为合适？使用map应该为一个比较合适的选择。  
+采取什么样的数据结构较为合适？使用map应该为一个比较合适的选择。 
+### 遍历一遍输出到文件，用时 14.3068s
 
+```cpp
+fstream file("fullevent.xls");
+ofstream outfile("1.txt");
+string s;
+smatch result;
+string line = "^(\\d{1,2})\t(?!Huskies)(\\w+)\\t";
+regex r(line);
+map<string, vector<string>> dic;
+getline(file, s);
 
+while (getline(file, s)) {
+	regex_search(s, result, r);
+	if (!result.empty()) {
+		auto& nos = dic[result[2]];
+		nos.push_back(s);
+	}
+}
+for (auto it = dic.begin(); it != dic.end(); ++it) {
+	for (auto a : it->second)outfile << a << endl;
+	outfile<< endl << endl;
+}
+```
+### 小问题：同样是遍历一遍，为什么之前要用100+s而这里只用了14s呢？
+#### 假设1：IO方式对遍历速度有较大影响。
+可能是此处对要输出的内容进行了保存，之后再进行统一IO？  
+——进行一波测试： 
+```cpp
+//用时202.833s，多次测试基本稳定在202s上下
+while (getline(file, s))
+{
+	regex_search(s, result, r);
+	if (!result.empty())
+		vec.push_back(result.str());
+}
+for (auto a : vec) {
+	outfile << a << endl;
+}
+
+```
+可见影响速度的并不是IO的方法，更换IO方法因为多了存取的过程速度甚至降低了1/3.那么假设不成立，猜测是正则表达式的编写影响了遍历的速度。
+
+#### 假设2：正则表达式的编写影响遍历检索速度：
+——更改正则表达式，进行测试：
+```cpp
+string line = "^(\\d{1,2})\t(?=Huskies)";
+regex r(line);
+while (getline(file, s))
+{
+	regex_search(s, result, r);
+	if (!result.empty())
+		outfile << s << endl;
+}
+```
+嗯这里从头开始匹配速度瞬间上来了，老子哭了。这说明影响速度的主要因素是正则表达式的书写。
 ## 3，求Huaskies球队每名队员出场的总次数
 ## 4. Huaskies球队球员所做的动作
 ## 5. Huaskies球队球员相互传球的情况
