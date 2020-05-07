@@ -7,22 +7,25 @@
 #include<list>
 #include<iostream>
 #include"CsvReader.h"
+#include<fstream>
 
 class Info
 {
 public:
-	Info(vector<string>&,list<vector<string>>&);
+	using piece = std::vector<string>;
+public:
+	Info(piece&,list<piece>&);
 	~Info();
-	void Add(vector<string> t);
-	list<vector<string>>  Search(int,const string&);
-	list<vector<string>>  Search(int ,const string&, bool);
+	void Add(piece t);
+	list<piece>  Search(int,const string&);
+	list<piece>  Search(int ,const string&, bool);
 	//查询发生在时间范围内的记录
-	list<vector<string>> Search(const string& starttime,const string& endtime);
+	list<piece> Search(const string& starttime,const string& endtime);
 	void Delete(); 
 	void Create();
 private:
-	vector<string> title;
-	list<vector<string>> data;
+	piece title;
+	list<piece> data;
 };
 
 
