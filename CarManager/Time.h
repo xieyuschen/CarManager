@@ -12,7 +12,7 @@ namespace CarManagerTypes {
 		Time(string year, string month, string day, string hour, string minite, string second);
 		string Show();
 		~Time();
-
+		bool operator<(Time);
 	private:
 		string _year;
 		string _month;

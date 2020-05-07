@@ -3,7 +3,9 @@
 #include<vector>
 #include<list>
 #include<iostream>
+#include"Time.h"
 using namespace std;
+using namespace CarManagerTypes;
 Info::Info(piece& _t, list<piece>& _d) {
 	title = _t;
 	data = _d;
@@ -22,39 +24,23 @@ list<Info::piece> Info::Search(int index,const string& key, bool cryptic)
 {
 
 	list<vector<string>> temp;
-	if (cryptic) {
-		for (vector<string> piece : data) 
-		{
-			if (piece[index].find(key) != string::npos) 
-			{
-				temp.push_back(piece);
-			}
-		}
-	}
-	else
+	bool condition;
+	for (vector<string> piece : data)
 	{
-		for (vector<string> piece : data) {
-			if (piece[index] == key) {
-				temp.push_back(piece);
-			}
-		}
+		condition = cryptic
+			? piece[index].find(key) != string::npos
+			: piece[index] == key;
+		if (condition)temp.push_back(piece);
 	}
+
 	return temp;
 }
-//list<Info::piece> Info::Search(int index,const string& key) {
-//	list<vector<string>> temp;
-//	for (vector<string> piece : data) {
-//		if (piece[index].find(key) != string::npos) {
-//			temp.push_back(piece);
-//		}
-//	}
-//	return temp;
-//}
-list<Info::piece>  Info::Search(const string& starttime,const string& endtime) {
-	list<vector<string>> temp;
+
+list<Info::piece> Info::Search(CarManagerTypes::Time start, CarManagerTypes::Time endtime) {
+	list<piece> temp;
 	if (title[5] == "取车时间") {
 		for (auto item : data) {
-			if (item[5] > starttime&& item[5] < endtime) {
+			if (item[5] >start.Show()& item[5] < endtime.Show()) {
 				temp.push_back(item);
 			}
 		}

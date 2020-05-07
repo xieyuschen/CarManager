@@ -45,4 +45,7 @@ namespace CarManagerTypes {
 	string Time::Show() {
 		return _year + "/" + _month + "/" + _day + "-" + _hour + ":" + _minite;
 	}
+	bool Time::operator<(Time r) {
+		return Show() < r.Show();
+	}
 }
