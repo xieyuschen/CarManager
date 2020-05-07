@@ -6,7 +6,7 @@
 #include"Time.h"
 using namespace std;
 using namespace CarManagerTypes;
-Info::Info(piece& _t, list<piece>& _d) {
+Info::Info(const piece& _t,const list<piece>& _d) {
 	title = _t;
 	data = _d;
 }
@@ -28,11 +28,10 @@ list<Info::piece> Info::Search(int index,const string& key, bool cryptic=true)
 	for (vector<string> piece : data)
 	{
 		condition = cryptic
-			? piece[index].find(key) != string::npos
-			: piece[index] == key;
+			?(piece[index].find(key) != string::npos)
+			:(piece[index] == key);
 		if (condition)temp.push_back(piece);
 	}
-
 	return temp;
 }
 

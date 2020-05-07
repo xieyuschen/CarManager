@@ -50,6 +50,13 @@ vector<string> CsvReader::GetTitle() {
 list<vector<string>> CsvReader::GetData() {
 	return data;
 }
+void CsvReader::ShowData() {
+	for (auto item : data) {
+		for (auto p : item)
+			cout << p << ends;
+		cout << endl;
+	}
+}
 void CsvReader::UpdateFile() {
 	ofstream fout(filename);
 	for (auto a : title)

@@ -33,7 +33,7 @@ public:
 	//返回数据表列数
 	list<vector<string>> GetData();
 	void UpdateFile();
-
+	void ShowData();
 	vector<string> title;
 	list<vector<string>> data;
 private:

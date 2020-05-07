@@ -15,7 +15,7 @@ class Info
 public:
 	using piece = std::vector<string>;
 public:
-	Info(piece&,list<piece>&);
+	Info(const piece&,const list<piece>&);
 	~Info();
 	void Add(piece t);
 	//list<piece>  Search(int,const string&);
