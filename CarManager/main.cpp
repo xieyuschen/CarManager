@@ -13,21 +13,23 @@ using namespace std;
 
 int main(){
 	
-	CarManagerTypes::Time t("2019/02/15-12:00");
-	cout << t.Show();
-	/*string line;
-	ifstream in;
-	in.open("E:\\Code\\CarManager\\CarManager\\1.txt");
-	in >> line;*/
-	//string file("1.csv");
-	//CsvReader demo(file);
-	//Info table(demo.title, demo.data);
-	//auto item = table.Search("2019/02/15-12:00", "2019/02/15-14:00");
-	//for (auto piece : item) {
-	//	for (auto a : piece)
-	//		cout << a << ends;
-	//	cout << endl;
+	CsvReader kinds("../车辆分类信息表.csv",'\t');
+	CsvReader basic("../车辆基本信息表.csv");
+	CsvReader rent("../租车订单信息表.csv");
+	string s;
+	cout << "Please Chose the Info you want to : ";
+	cin >> s;
+	if (s == "1") {
+		vector<string> titles(kinds.GetTitle());
+		cout << "Input the index of the project you want to :"<< endl;
+		auto beg = titles.begin();
+		for(auto it = beg; it != titles.end(); it++) {
+			cout << it - beg << ". " << *it << endl;
+		}
+	}
+	while (cin >> s) {
 
-	//}
+	}
+	
 
 }

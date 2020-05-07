@@ -9,6 +9,7 @@
 #include"CsvReader.h"
 #include<fstream>
 #include"Time.h"
+using namespace CarManagerTypes;
 class Info
 {
 public:
@@ -20,7 +21,7 @@ public:
 	//list<piece>  Search(int,const string&);
 	list<piece>  Search(int ,const string&, bool);
 	//查询发生在时间范围内的记录
-	list<Info::piece>  Search(CarManagerTypes::Time start, CarManagerTypes::Time endtime) ;
+	list<piece>  Search(Time,Time);
 	void Delete();
 	void Create();
 private:

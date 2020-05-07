@@ -4,7 +4,7 @@
 #include"CsvReader.h"
 #include<fstream>
 #include<sstream>
-CsvReader::CsvReader(string _filename)
+CsvReader::CsvReader(string _filename, char split=',')
 {
 	filename = _filename;
 	ifstream fin(_filename);
@@ -16,7 +16,7 @@ CsvReader::CsvReader(string _filename)
 		istringstream sin(line);
 		if (!flag++)
 		{
-			while (getline(sin, temp, ','))
+			while (getline(sin, temp, split))
 			{
 				title.push_back(temp);
 			}
@@ -24,7 +24,7 @@ CsvReader::CsvReader(string _filename)
 		else
 		{
 			vector<string> vec;
-			while (getline(sin, temp, ','))
+			while (getline(sin, temp, split))
 			{
 				vec.push_back(temp);
 			}
@@ -32,6 +32,11 @@ CsvReader::CsvReader(string _filename)
 		}
 	}
 	column = title.size();
+}
+CsvReader::CsvReader(string _filename)
+	:CsvReader(_filename,',')
+{
+	
 }
 CsvReader::~CsvReader()
 {

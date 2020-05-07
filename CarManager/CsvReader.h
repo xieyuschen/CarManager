@@ -13,6 +13,7 @@ using namespace std;
 class CsvReader
 {
 public:
+	CsvReader(string,char);	
 	CsvReader(string);
 	CsvReader() :title(NULL), data(NULL),column(0){};
 	~CsvReader();

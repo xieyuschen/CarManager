@@ -20,7 +20,7 @@ void Info::Add(piece a) {
 	}
 }
 
-list<Info::piece> Info::Search(int index,const string& key, bool cryptic)
+list<Info::piece> Info::Search(int index,const string& key, bool cryptic=true)
 {
 
 	list<vector<string>> temp;
