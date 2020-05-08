@@ -43,28 +43,35 @@ int main(){
 	cout << "1. 车辆分类信息" << endl;
 	cout << "2. 车辆基本信息" << endl;
 	cout << "3. 租车订单信息" << endl;
-
 	cin >> branch;
+
 	map.insert(make_pair(1, kinds));
 	map.insert(make_pair(2, basic));
 	map.insert(make_pair(3, rent));
-
 	auto temp = map[branch];
 	Info info(temp.title, temp.data);
 
-
+	//x:1,show all table infomation 
 	auto showAll = [&temp]()->void {
 		cout << endl;
 		temp.ShowData();
 	};
 
-	//show the available car
+	//1:2,find the certain car type
+	auto findTypeLeft = [&temp,&info]()->void {
+		cout << "Input the Car Type you want to book as follows:" << endl;
+		string a;
+		cin >> a;
+		auto t=info.Search(1, a, false);
+		func(t);
+	};
+	//2:2,show the available car
 	auto searchAvailable = [&info]()->void{
 		string n = "n";
 		func(info.Search(6, n, false));
 	};
-	//find the car you prefer in 车辆基本信息表.csv and input the
-	auto searchWith = [&temp, &info, &s]()->void
+	//2:3,find the car you prefer in 车辆基本信息表.csv and input the
+	auto searchWitharg = [&temp, &info, &s]()->void
 	{
 		cout << "Input the car you want to: ,if you want to query many,input index with space,end with -1" << endl;
 		for (auto it = temp.title.begin(); it != temp.title.end(); it++) {
@@ -91,12 +98,12 @@ int main(){
 		func(info.Search(mul[0], s, false));
 
 	};
-
 	filter.emplace(11, showAll);
+	filter.emplace(12, findTypeLeft);
 	filter.emplace(21, showAll);
+	filter.emplace(22, searchAvailable);
+	filter.emplace(23, searchWitharg);
 	filter.emplace(31, showAll);
-	filter.emplace(32, searchAvailable);
-	
 	
 
 	cout << "input the following index to refer what you want to do :" << endl;
