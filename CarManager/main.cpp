@@ -13,7 +13,16 @@
 #include<fstream>
 using namespace std;
 #include"Time.h"
+template<typename T>
+void func(list<vector<T>> vector) {
+	for (auto piece : vector) {
+		for (auto item : piece) {
+			cout << '|' << setiosflags(ios::right) << setw(15) << item;
 
+		}
+		cout << endl;
+	}
+}
 int main(){
 	stringstream ss;
 	CsvReader kinds("../车辆分类信息表.csv",'\t');
@@ -48,12 +57,8 @@ int main(){
 	else if (s == "2") {
 
 		string n = "n";
-		for (auto a : info.Search(6, n, false)) {
-			for (auto i : a) {
-				cout << i << ends;
-			}
-			cout << endl;
-		}
+		func(info.Search(6, n, false));
+
 	}
 	else if(s=="3")
 	{
@@ -79,11 +84,7 @@ int main(){
 		//input the query info
 		cin >> s;
 		cout << "Result:---------------------------------" << endl;
-		for (auto piece : info.Search(mul[0], s, false)) {
-			for (auto item : piece) {
-				cout << '|' << setiosflags(ios::right)<< setw(15) << item;
-			}
-			cout << endl;
-		}
+		func(info.Search(mul[0], s, false));
+
 	}
 }

@@ -1,0 +1,10 @@
+# whether an extension method or not in Cpp
+&emsp;&emsp;[A wonderdul page to read in stackoverflow !](https://stackoverflow.com/questions/5463009/extension-methods-in-c) Here are some excellent paragraphs:    
+&emsp;&emsp;Different languages approach development in different ways. In particular C# and Java have a strong point of view with respect to OO that leads to everything is an object mindset (C# is a little more lax here). In that approach, extension methods provide a simple way of extending an existing object or interface to add new features.    
+&emsp;&emsp;There are no extension methods in C++, nor are they needed. When developing C++, forget the everything is an object paradigm --which, by the way, is false even in Java/C# . A different mindset is taken in C++, there are objects, and the objects have operations that are inherently part of the object, but there are also other operations that form part of the interface and need not be part of the class. A must read by Herb Sutter is [What's In a Class?](http://www.gotw.ca/publications/mill02.htm), where the author defends (and I agree) that you can easily extend any given class with simple free functions.  
+
+&emsp;&emsp;As a particular simple example, the standard templated class `basic_ostream` has a few member methods to dump the contents of some primitive types, and then it is enhanced with (also templated) free functions that extend that functionality to other types by using the existing public interface. For example,`std::cout << 1; `is implemented as a member function, while `std::cout << "Hi"; `is a free function implemented in terms of other more basic members.  
+
+&emsp;&emsp;**Extensibility in C++ is achieved by means of free functions, not by ways of adding new methods to existing objects**
+## So vy the way,what's the free function? :)
+&emsp;&emsp;The term free function in C++ simply refers to non-member functions. Every function that is not a member function is a free function.
