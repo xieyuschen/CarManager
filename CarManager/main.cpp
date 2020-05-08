@@ -37,9 +37,13 @@ int main(){
 	stringstream ss;
 	auto f = []()->void {};
 	std::map<int, std::function<void()> > filter;
+	
 
+	cout << "Please Chose the Info you want to : "<<endl;
+	cout << "1. 车辆分类信息" << endl;
+	cout << "2. 车辆基本信息" << endl;
+	cout << "3. 租车订单信息" << endl;
 
-	cout << "Please Chose the Info you want to : ";
 	cin >> branch;
 	map.insert(make_pair(1, kinds));
 	map.insert(make_pair(2, basic));
@@ -47,7 +51,6 @@ int main(){
 
 	auto temp = map[branch];
 	Info info(temp.title, temp.data);
-	//vector<string> titles=temp.GetTitle();
 
 
 	auto showAll = [&temp]()->void {
@@ -93,6 +96,7 @@ int main(){
 	filter.emplace(21, showAll);
 	filter.emplace(31, showAll);
 	filter.emplace(32, searchAvailable);
+	
 	
 
 	cout << "input the following index to refer what you want to do :" << endl;
