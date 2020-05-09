@@ -4,7 +4,7 @@
 #include<string>
 #include<vector>
 #include<list>
-#include<iostream>
+#include<QFile>
 #include<QString>
 using namespace std;
 class CsvReader

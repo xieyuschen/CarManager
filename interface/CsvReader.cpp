@@ -6,6 +6,7 @@
 #include<QFile>
 #include<sstream>
 #include <QTextStream>
+#include<QFileDialog>
 using namespace std;
 CsvReader::CsvReader(QString _filename, QChar split=',')
 {
@@ -13,8 +14,9 @@ CsvReader::CsvReader(QString _filename, QChar split=',')
     QString temp;
 
     QFile file(_filename);
+    file.open(QIODevice::ReadOnly | QFile::Text);
     QTextStream in(&file);
-
+    //file.close();
 	string line;
 	int flag = 0;
     vector<QString> vec;
@@ -43,6 +45,7 @@ CsvReader::CsvReader(QString _filename)
 }
 CsvReader::~CsvReader()
 {
+
 }
 size_t  CsvReader::GetColumnnum() {
 	return column;
