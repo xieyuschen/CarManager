@@ -2,6 +2,7 @@
 #define INTERFACE_H
 
 #include <QMainWindow>
+#include"Info.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class interface; }
@@ -12,10 +13,14 @@ class interface : public QMainWindow
     Q_OBJECT
 
 public:
-    interface(QWidget *parent = nullptr);
+    interface(Info info,QWidget *parent = nullptr);
     ~interface();
+
+private slots:
+    void on_pushButton_clicked();
 
 private:
     Ui::interface *ui;
+    Info info;
 };
 #endif // INTERFACE_H

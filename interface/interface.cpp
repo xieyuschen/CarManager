@@ -1,9 +1,10 @@
 #include "interface.h"
 #include "ui_interface.h"
 
-interface::interface(QWidget *parent)
-    : QMainWindow(parent)
+interface::interface(Info _info,QWidget *parent)
+    :QMainWindow(parent)
     , ui(new Ui::interface)
+    ,info(_info)
 {
     ui->setupUi(this);
 }
@@ -11,5 +12,23 @@ interface::interface(QWidget *parent)
 interface::~interface()
 {
     delete ui;
+}
+
+
+void interface::on_pushButton_clicked()
+{
+    auto records=info.Search(6,"n",false);
+    QString s=func(records);
+
+    auto index=ui->comboBox->currentIndex();
+    switch (index) {
+    case 0:
+        ui->text->setText(s);
+        break;
+    case 1:
+        ui->text->setText("Gutentag!");
+        break;
+    }
+
 }
 
