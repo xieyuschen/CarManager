@@ -5,6 +5,20 @@ VisualStudioVersion = 16.0.29728.190
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "CarManager", "CarManager\CarManager.vcxproj", "{2604264C-7F86-4B2D-9CF4-C7B0885B7E63}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{ACFAC618-D6E7-42C6-A21B-969A6C51FA66}"
+	ProjectSection(SolutionItems) = preProject
+		interface\CsvReader.cpp = interface\CsvReader.cpp
+		interface\CsvReader.h = interface\CsvReader.h
+		interface\Info.cpp = interface\Info.cpp
+		interface\Info.h = interface\Info.h
+		interface\interface.cpp = interface\interface.cpp
+		interface\interface.h = interface\interface.h
+		interface\interface.ui = interface\interface.ui
+		interface\main.cpp = interface\main.cpp
+		interface\Time.cpp = interface\Time.cpp
+		interface\Time.h = interface\Time.h
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
