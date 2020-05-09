@@ -18,18 +18,15 @@ interface::~interface()
 
 void interface::on_pushButton_clicked()
 {
-    QString fileName = QFileDialog::getOpenFileName();
+    //QString fileName = QFileDialog::getOpenFileName();
 
-    QFile file(fileName);
-    file.open(QIODevice::ReadOnly | QFile::Text);
-    QTextStream in(&file);
     auto records=info.Search(6,"n",false);
     QString s=func(records);
 
     auto index=ui->comboBox->currentIndex();
     switch (index) {
     case 0:
-        ui->text->setText(in.readAll());
+        ui->text->setText(s);
         break;
     case 1:
         ui->text->setText("Gutentag!");

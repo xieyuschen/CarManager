@@ -5,8 +5,8 @@
 int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
-    QString fileName = QFileDialog::getOpenFileName();
-
+    //QString fileName = QFileDialog::getOpenFileName();
+    QString fileName="E:\\Code\\CarManager\\车辆基本信息表.csv";
     CsvReader reader(fileName,'\t');
 
     Info info(reader.title,reader.data);

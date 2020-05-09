@@ -8,7 +8,7 @@
 #include <QTextStream>
 #include<QFileDialog>
 using namespace std;
-CsvReader::CsvReader(QString _filename, QChar split=',')
+CsvReader::CsvReader(QString _filename, QChar split)
 {
 	filename = _filename;
     QString temp;
@@ -19,8 +19,9 @@ CsvReader::CsvReader(QString _filename, QChar split=',')
     //file.close();
 	string line;
 	int flag = 0;
+
     vector<QString> vec;
-    while (in.atEnd())
+    while (!in.atEnd())
 	{
         temp=in.readLine();
 		if (!flag++)
@@ -32,7 +33,7 @@ CsvReader::CsvReader(QString _filename, QChar split=',')
 		{
             vec.clear();
             for(auto item:temp.split(split))
-                vec.push_back(temp);
+                vec.push_back(item);
 			data.push_back(vec);
 		}
 	}

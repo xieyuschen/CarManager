@@ -16,8 +16,7 @@ QString func(list<vector<T>> vector) {
     QString s;
     for (const auto piece : vector) {
         for (const auto item : piece) {
-            QString spaces(15-item.length(),' ');
-            s+=spaces+item;
+            s+=item;
         }
     s+="\n";
     }

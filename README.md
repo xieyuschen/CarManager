@@ -7,3 +7,5 @@ QFile file(_filename);
 file.open(QIODevice::ReadOnly | QFile::Text);
 QTextStream in(&file);
 ```
+
+## 2. InEnd()方法在没有东西读的时候返回true，错用条件导致无法读取
