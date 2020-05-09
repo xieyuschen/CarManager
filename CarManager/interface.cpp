@@ -13,3 +13,8 @@ Interface::~Interface()
     delete ui;
 }
 
+
+void Interface::on_actionworld_triggered()
+{
+
+}

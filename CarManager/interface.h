@@ -15,6 +15,9 @@ public:
     Interface(QWidget *parent = nullptr);
     ~Interface();
 
+private slots:
+    void on_actionworld_triggered();
+
 private:
     Ui::Interface *ui;
 };
