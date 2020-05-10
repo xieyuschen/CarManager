@@ -26,7 +26,7 @@ void interface::on_pushButton_clicked()
     auto index=ui->comboBox->currentIndex();
     switch (index) {
     case 0:
-        ui->text->setText(s);
+        ui->text->setPlainText(s.replace('\t',"sad"));
         break;
     case 1:
         ui->text->setText("Gutentag!");

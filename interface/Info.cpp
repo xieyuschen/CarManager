@@ -35,20 +35,5 @@ list<Info::piece> Info::Search(int index,const QString& key, bool cryptic=true)
 	return temp;
 }
 
-//list<Info::piece> Info::Search(CarManagerTypes::Time start, CarManagerTypes::Time endtime) {
-//    list<piece> temp;
-//    if (title[5] == "取车时间") {
-//        for (auto item : data) {
-//            if (item[5] >start.Show()& item[5] < endtime.Show()) {
-//                temp.push_back(item);
-//            }
-//        }
-//        return temp;
-//    }
-//    else {
-//        throw new exception();
-//    }
-
-//}
 void Info::Delete() {};
 void Info::Create() {};

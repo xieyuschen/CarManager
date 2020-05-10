@@ -26,13 +26,13 @@ CsvReader::CsvReader(QString _filename, QChar split)
         temp=in.readLine();
 		if (!flag++)
 		{
-            for(auto item:temp.split(split))
+            for(auto item:temp.split(split,QString::SkipEmptyParts))
             title.push_back(item);
 		}
 		else
 		{
             vec.clear();
-            for(auto item:temp.split(split))
+            for(auto item:temp.split(split,QString::SkipEmptyParts))
                 vec.push_back(item);
 			data.push_back(vec);
 		}

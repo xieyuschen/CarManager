@@ -13,12 +13,12 @@
 #include<QApplication>
 template <typename T>
 QString func(list<vector<T>> vector) {
-    QString s;
+    QString s{};
     for (const auto piece : vector) {
         for (const auto item : piece) {
-            s+=item;
+            s.append(item);
         }
-    s+="\n";
+        s.append('\n');
     }
     return s;
 }
