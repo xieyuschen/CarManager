@@ -29,7 +29,7 @@ list<Info::piece> Info::Search(int index,const QString& key, bool cryptic=true)
 	{
 		condition = cryptic
             ?piece[index].contains(key)
-			:(piece[index] == key);
+            :piece[index].remove('\t') == key;
 		if (condition)temp.push_back(piece);
 	}
 	return temp;

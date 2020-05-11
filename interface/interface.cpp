@@ -20,16 +20,16 @@ void interface::on_pushButton_clicked()
 {
     //QString fileName = QFileDialog::getOpenFileName();
 
-    auto records=info.Search(6,"n",false);
-    QString s=func(records);
 
     auto index=ui->comboBox->currentIndex();
     switch (index) {
     case 0:
-        ui->text->setPlainText(s.replace('\t',"sad"));
+
+        ui->text->setPlainText(func(info.Search(6,"n",false)).replace('\t',"sad"));
         break;
     case 1:
-        ui->text->setText("Gutentag!");
+        auto text=ui->lineEdit->text();
+        ui->text->setPlainText(func(info.Search(1,text,ui->checkBox->isChecked())));
         break;
     }
 
