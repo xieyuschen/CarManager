@@ -3,7 +3,7 @@
 
 #include <QMainWindow>
 #include"Info.h"
-
+#include"ui_mainwindow.h"
 QT_BEGIN_NAMESPACE
 namespace Ui { class interface; }
 QT_END_NAMESPACE
@@ -21,6 +21,7 @@ private slots:
 
 private:
     Ui::interface *ui;
+
     Info info;
 };
 #endif // INTERFACE_H
