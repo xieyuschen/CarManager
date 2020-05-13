@@ -26,6 +26,14 @@ void interface::on_pushButton_clicked()
 
 ```
 
-## 使用`this->hide();`可以在子窗口弹出的时候隐藏主窗口。
+## 3. 使用`this->hide();`可以在子窗口弹出的时候隐藏主窗口。
 
 剩下的就自己慢慢玩咯，有什么问题再慢慢查完事:)
+
+## 4. 使用智能指针的小问题
+我需要在点击HomePage的按钮时自动跳转到下一个界面，这里使用动态分配是没有什么问题的，但如果使用智能指针的话，在点击按钮后直接一闪而过。
+```cpp
+shared_ptr<interface> w=make_shared<interface>(info,this);
+w->show();
+```
+可见问题是出现在智能指针这里，提前被释放了，那么我就需要考虑别的方法，比如说作为HomePage的一个数据成员。

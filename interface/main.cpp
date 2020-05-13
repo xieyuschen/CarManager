@@ -1,16 +1,12 @@
 #include "interface.h"
-
+#include"HomePage.h"
 #include <QApplication>
 #include<QFileDialog>
 int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
-    //QString fileName = QFileDialog::getOpenFileName();
-    QString fileName="E:\\Code\\CarManager\\车辆基本信息表.csv";
-    CsvReader reader(fileName,'\t');
 
-    Info info(reader.title,reader.data);
-    interface w(info);
-    w.show();
+    HomePage h{};
+    h.show();
     return a.exec();
 }

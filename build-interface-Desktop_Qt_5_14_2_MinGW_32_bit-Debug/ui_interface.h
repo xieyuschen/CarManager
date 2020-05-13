@@ -31,11 +31,12 @@ public:
     QTextBrowser *text;
     QComboBox *comboBox;
     QLabel *label_3;
-    QLabel *label;
-    QLabel *label_2;
+    QLabel *project;
+    QLabel *linelable;
     QLineEdit *lineEdit;
     QPushButton *pushButton;
     QCheckBox *checkBox;
+    QPushButton *pushButton_2;
     QMenuBar *menubar;
     QStatusBar *statusbar;
 
@@ -57,12 +58,12 @@ public:
         label_3 = new QLabel(centralwidget);
         label_3->setObjectName(QString::fromUtf8("label_3"));
         label_3->setGeometry(QRect(50, 160, 60, 21));
-        label = new QLabel(centralwidget);
-        label->setObjectName(QString::fromUtf8("label"));
-        label->setGeometry(QRect(50, 120, 72, 15));
-        label_2 = new QLabel(centralwidget);
-        label_2->setObjectName(QString::fromUtf8("label_2"));
-        label_2->setGeometry(QRect(50, 210, 56, 21));
+        project = new QLabel(centralwidget);
+        project->setObjectName(QString::fromUtf8("project"));
+        project->setGeometry(QRect(50, 120, 72, 15));
+        linelable = new QLabel(centralwidget);
+        linelable->setObjectName(QString::fromUtf8("linelable"));
+        linelable->setGeometry(QRect(50, 210, 56, 21));
         lineEdit = new QLineEdit(centralwidget);
         lineEdit->setObjectName(QString::fromUtf8("lineEdit"));
         lineEdit->setEnabled(true);
@@ -73,6 +74,9 @@ public:
         checkBox = new QCheckBox(centralwidget);
         checkBox->setObjectName(QString::fromUtf8("checkBox"));
         checkBox->setGeometry(QRect(130, 260, 91, 19));
+        pushButton_2 = new QPushButton(centralwidget);
+        pushButton_2->setObjectName(QString::fromUtf8("pushButton_2"));
+        pushButton_2->setGeometry(QRect(0, 10, 93, 28));
         interface->setCentralWidget(centralwidget);
         menubar = new QMenuBar(interface);
         menubar->setObjectName(QString::fromUtf8("menubar"));
@@ -94,10 +98,11 @@ public:
         comboBox->setItemText(1, QCoreApplication::translate("interface", "\345\217\257\347\224\250\350\275\246\350\276\206", nullptr));
 
         label_3->setText(QCoreApplication::translate("interface", "\346\237\245\350\257\242\351\200\211\351\241\271", nullptr));
-        label->setText(QCoreApplication::translate("interface", "Project:", nullptr));
-        label_2->setText(QCoreApplication::translate("interface", "Keyword", nullptr));
+        project->setText(QCoreApplication::translate("interface", "Project:", nullptr));
+        linelable->setText(QCoreApplication::translate("interface", "Keyword", nullptr));
         pushButton->setText(QCoreApplication::translate("interface", "Find", nullptr));
         checkBox->setText(QCoreApplication::translate("interface", "Crystic", nullptr));
+        pushButton_2->setText(QCoreApplication::translate("interface", "return", nullptr));
     } // retranslateUi
 
 };

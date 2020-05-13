@@ -17,19 +17,19 @@ DEFINES += QT_DEPRECATED_WARNINGS
 
 SOURCES += \
     CsvReader.cpp \
+    HomePage.cpp \
     Info.cpp \
-    child.cpp \
     main.cpp \
     interface.cpp
 
 HEADERS += \
     CsvReader.h \
+    HomePage.h \
     Info.h \
-    child.h \
     interface.h
 
 FORMS += \
-    child.ui \
+    HomePage.ui \
     interface.ui
 
 # Default rules for deployment.

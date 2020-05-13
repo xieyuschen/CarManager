@@ -57,7 +57,7 @@
      <string>查询选项</string>
     </property>
    </widget>
-   <widget class="QLabel" name="label">
+   <widget class="QLabel" name="project">
     <property name="geometry">
      <rect>
       <x>50</x>
@@ -70,7 +70,7 @@
      <string>Project:</string>
     </property>
    </widget>
-   <widget class="QLabel" name="label_2">
+   <widget class="QLabel" name="linelable">
     <property name="geometry">
      <rect>
       <x>50</x>
@@ -120,6 +120,19 @@
     </property>
     <property name="text">
      <string>Crystic</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButton_2">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>10</y>
+      <width>93</width>
+      <height>28</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>return</string>
     </property>
    </widget>
   </widget>
