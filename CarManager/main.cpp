@@ -9,11 +9,14 @@
 #include<iomanip>
 #include<sstream>
 #include<fstream>
-
-using namespace std;
-
-#include"Time.h"
+#include<list>
+#include"Info.h"
+#include"CsvReader.h"
+#include"TimeMe.h"
 #include<functional>
+using namespace std;
+using namespace CarManagerCommon;
+using namespace CarManagerTypes;
 template<typename T>
 void func(list<vector<T>> vector) {
 	for (const auto piece : vector) {

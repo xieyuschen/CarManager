@@ -12,7 +12,7 @@
 #include<iostream>
 #include"CsvReader.h"
 #include<fstream>
-#include"Time.h"
+#include"TimeMe.h"
 using namespace CarManagerTypes;
 namespace CarManagerCommon{
 	class Info
@@ -26,7 +26,7 @@ namespace CarManagerCommon{
 		//list<piece>  Search(int,const string&);
 		list<piece>  Search(int, const string&, bool);
 		//查询发生在时间范围内的记录
-		list<piece>  Search(Time, Time);
+		list<piece>  Search(TimeMe, TimeMe);
 		void Delete();
 		void Create();
 	private:

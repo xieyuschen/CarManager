@@ -3,7 +3,7 @@
 #include<vector>
 #include<list>
 #include<iostream>
-#include"Time.h"
+#include"TimeMe.h"
 
 using namespace std;
 using namespace CarManagerTypes;
@@ -37,7 +37,7 @@ namespace CarManagerCommon {
 		return temp;
 	}
 
-	list<Info::piece> Info::Search(CarManagerTypes::Time start, CarManagerTypes::Time endtime) {
+	list<Info::piece> Info::Search(CarManagerTypes::TimeMe start, CarManagerTypes::TimeMe endtime) {
 		list<piece> temp;
 		if (title[5] == "取车时间") {
 			for (auto item : data) {

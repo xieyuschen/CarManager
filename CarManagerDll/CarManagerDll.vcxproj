@@ -145,12 +145,12 @@
   <ItemGroup>
     <ClCompile Include="CsvReader.cpp" />
     <ClCompile Include="Info.cpp" />
-    <ClCompile Include="Time.cpp" />
+    <ClCompile Include="TimeMe.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="CsvReader.h" />
     <ClInclude Include="Info.h" />
-    <ClInclude Include="Time.h" />
+    <ClInclude Include="TimeMe.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
