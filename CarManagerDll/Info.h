@@ -15,7 +15,7 @@
 #include"TimeMe.h"
 using namespace CarManagerTypes;
 namespace CarManagerCommon{
-	class Info
+	class Info_API Info
 	{
 	public:
 		using piece = std::vector<string>;

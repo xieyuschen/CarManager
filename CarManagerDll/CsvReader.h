@@ -20,34 +20,33 @@ namespace CarManagerCommon
 	class CsvReader_API CsvReader 
 	{
 	public:
-		CsvReader();
-		//CsvReader(string, char);
-		//CsvReader(string);
-		//CsvReader() :title(NULL), data(NULL), column(0) {};
-		//~CsvReader();
-		//CsvReader(CsvReader&& d) noexcept {
-		//	title = std::move(d.title);
-		//	data = std::move(d.data);
-		//	column = std::move(d.column);
-		//}
-		//CsvReader(const CsvReader& d) {
-		//	title = d.title;
-		//	column = d.column;
-		//	data = d.data;
-		//}
-		//size_t GetColumnnum();
-		////返回vector<string> 的列标题
-		//vector<string> GetTitle();
-		////返回数据表列数
-		//list<vector<string>> GetData();
-		//void UpdateFile();
-		//void ShowData();
-		//vector<string> title;
-		//list<vector<string>> data;
+		CsvReader(string, char);
+		CsvReader(string);
+		CsvReader() :title(NULL), data(NULL), column(0) {};
+		~CsvReader();
+		CsvReader(CsvReader&& d) noexcept {
+			title = std::move(d.title);
+			data = std::move(d.data);
+			column = std::move(d.column);
+		}
+		CsvReader(const CsvReader& d) {
+			title = d.title;
+			column = d.column;
+			data = d.data;
+		}
+		size_t GetColumnnum();
+		//返回vector<string> 的列标题
+		vector<string> GetTitle();
+		//返回数据表列数
+		list<vector<string>> GetData();
+		void UpdateFile();
+		void ShowData();
+		vector<string> title;
+		list<vector<string>> data;
 		void TestFunction();
-	//private:
-	//	size_t column;
-	//	string filename;
+	private:
+		size_t column;
+		string filename;
 	};
 
 }

@@ -9,7 +9,7 @@
 using namespace std;
 namespace CarManagerTypes {
 
-	class TimeMe
+	class TimeMe_API TimeMe
 	{
 	public:
 		TimeMe();

@@ -1,3 +1,4 @@
+#define INFODLL_EXPORT
 #include"Info.h"
 #include<string>
 #include<vector>
