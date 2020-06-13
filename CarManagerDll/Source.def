@@ -1,0 +1,4 @@
+LIBRARY "CarManagerDll"
+
+EXPORTS
+add @ 1
