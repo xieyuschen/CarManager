@@ -1,8 +1,14 @@
 #pragma once
+#ifdef CSVREADERDLL_EXPORTS
+#define CsvReader_API __declspec(dllexport)
+#else
+#define CsvReader_API __declspec(dllimport)
+#endif // CSVREADERDLL_EXPORT
+
 #include<string>
 #include<vector>
 #include<list>
-#include"ICsvReader.h"
+
 #include<iostream>
 using namespace std;
 //===========================================
@@ -11,7 +17,7 @@ using namespace std;
 //对象中存储了此csv表中的列表，以及每行的内容
 namespace CarManagerCommon
 {
-	class CsvReader_API CsvReader :public ICsvReader
+	class CsvReader_API CsvReader 
 	{
 	public:
 		CsvReader();

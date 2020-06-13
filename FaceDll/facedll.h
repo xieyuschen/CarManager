@@ -6,7 +6,7 @@
 #define FACEAPI  _declspec(dllimport)
 #endif
 //可以include需要用到的头文件
-class FACEAPI  FaceRecognizer
+class FACEAPI FaceRecognizer
 {
 public:
 	FaceRecognizer();

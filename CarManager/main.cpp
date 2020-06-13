@@ -15,7 +15,7 @@
 #include"TimeMe.h"
 #include"../FaceDll/facedll.h"
 #include<functional>
-#pragma comment(lib,"../Debug/facedll.lib")
+//#pragma comment(lib,"../Debug/facedll.lib")
 using namespace std;
 using namespace CarManagerCommon;
 using namespace CarManagerTypes;
@@ -33,6 +33,8 @@ typedef CarManagerCommon::CsvReader* (__cdecl* CsvFactory)();
 int main() {
 	FaceRecognizer f;
 	f.ConfirmTest();
+	CsvReader csv;
+	csv.TestFunction();
 	//HMODULE dll = LoadLibrary(L"CarManagerDll.dll");
 	//if (!dll)
 	//{

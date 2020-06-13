@@ -1,3 +1,6 @@
+#define CSVREADERDLL_EXPORTS
+
+
 #include<string>
 #include<vector>
 #include<list>

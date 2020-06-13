@@ -23,8 +23,5 @@
     <ClInclude Include="CsvReader.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="ICsvReader.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
   </ItemGroup>
 </Project>
