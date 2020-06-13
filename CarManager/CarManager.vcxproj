@@ -26,6 +26,9 @@
       <Project>{604f158d-4eb5-42d5-afda-6698d46ae181}</Project>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Factory.h" />
+  </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
     <ProjectGuid>{2604264C-7F86-4B2D-9CF4-C7B0885B7E63}</ProjectGuid>
