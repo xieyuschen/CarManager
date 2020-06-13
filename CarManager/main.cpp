@@ -27,7 +27,10 @@ void func(list<vector<T>> vector) {
 		cout << endl;
 	}
 }
+typedef CarManagerCommon::CsvReader* (__cdecl* CsvFactory)();
 int main(){
+
+	
 	CsvReader kinds("../车辆分类信息表.csv",'\t');
 	CsvReader basic("../车辆基本信息表.csv",'\t');
 	CsvReader rent("../租车订单信息表.csv", '\t');

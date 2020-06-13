@@ -42,6 +42,8 @@ namespace CarManagerCommon
 		void ShowData();
 		vector<string> title;
 		list<vector<string>> data;
+
+		static void TestFunction();
 	private:
 
 		size_t column;

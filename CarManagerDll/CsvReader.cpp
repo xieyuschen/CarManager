@@ -71,4 +71,7 @@ namespace CarManagerCommon {
 		}
 
 	}
+	void CsvReader::TestFunction() {
+		cout << "This is a Test function in CsvReader!" << endl;
+	}
 }

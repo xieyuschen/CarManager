@@ -6,10 +6,10 @@ using namespace std;
 CarManagerCommon::CsvReader* CreateCsvReader() {
 	return new CarManagerCommon::CsvReader();
 }
-CarManagerCommon::CsvReader* CreateCsvReader(string s) {
+CarManagerCommon::CsvReader* CreateCsvReader1(string s) {
 	return new CarManagerCommon::CsvReader(s);
 }
-CarManagerCommon::CsvReader* CreateCsvReader(string s,char c) {
+CarManagerCommon::CsvReader* CreateCsvReader2(string s,char c) {
 	return new CarManagerCommon::CsvReader(s,c);
 }
 
