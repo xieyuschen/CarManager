@@ -1,17 +1,18 @@
-#include"Time.h"
-#include<chrono>
-#include<ctime>
+#pragma once
+#ifdef TIME_EXPORT
+#define Time_API __declspec(dllexport)
+#else
+#define Time_API __declspec(dllimport)
+#endif // TIME_EXPORT
+
+#include"TimeMe.h"
 #include<sstream>
 #include<regex>
 namespace CarManagerTypes {
-	Time::Time()
+	TimeMe::TimeMe()
 	{
-		//auto time= std::chrono::system_clock::now();
-		//std::time_t t = std::chrono::system_clock::to_time_t(time);
-		//auto item = ctime(&t);
-		//Time(item);
 	}
-	Time::Time(string year, string month, string day, string hour, string minite, string second) {
+	TimeMe::TimeMe(string year, string month, string day, string hour, string minite, string second) {
 		_year = year;
 		_month = month;
 		_day = day;
@@ -19,7 +20,7 @@ namespace CarManagerTypes {
 		_minite = minite;
 		_second = second;
 	}
-	Time::Time(string dateString) {
+	TimeMe::TimeMe(string dateString) {
 		string format = "$1 $2 $3 $4 $5";
 		regex r("^(\\d{4})/(\\d{2})/(\\d{2})-(\\d{2}):(\\d{1,2}).*");
 		string temp;
@@ -38,14 +39,14 @@ namespace CarManagerTypes {
 		_minite = time[4];
 		_second = time[5];
 	}
-	Time::~Time()
+	TimeMe::~TimeMe()
 	{
 	}
 
-	string Time::Show() {
+	string TimeMe::Show() {
 		return _year + "/" + _month + "/" + _day + "-" + _hour + ":" + _minite;
 	}
-	bool Time::operator<(Time r) {
+	bool TimeMe::operator<(TimeMe r) {
 		return Show() < r.Show();
 	}
 }
