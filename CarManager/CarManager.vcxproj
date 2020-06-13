@@ -25,9 +25,6 @@
     <ProjectReference Include="..\CarManagerDll\CarManagerDll.vcxproj">
       <Project>{604f158d-4eb5-42d5-afda-6698d46ae181}</Project>
     </ProjectReference>
-    <ProjectReference Include="..\FaceDll\FaceDll.vcxproj">
-      <Project>{570159c7-687e-40e8-b56f-6612653512e3}</Project>
-    </ProjectReference>
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
