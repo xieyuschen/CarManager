@@ -13,7 +13,9 @@
 #include"Info.h"
 #include"CsvReader.h"
 #include"TimeMe.h"
+#include"../FaceDll/facedll.h"
 #include<functional>
+#pragma comment(lib,"../Debug/facedll.lib")
 using namespace std;
 using namespace CarManagerCommon;
 using namespace CarManagerTypes;
@@ -29,19 +31,21 @@ void func(list<vector<T>> vector) {
 }
 typedef CarManagerCommon::CsvReader* (__cdecl* CsvFactory)();
 int main() {
-	HMODULE dll = LoadLibrary(L"CarManagerDll.dll");
-	if (!dll)
-	{
-		cout << "Fail load library" << endl;
-	}
-	CsvFactory f = reinterpret_cast<CsvFactory>(GetProcAddress(dll, "CreateCsvReader2"));
-	if (!f)
-	{
-		cerr << "Unable to load CreateLogarithmicMath from DLL!\n";
-		FreeLibrary(dll);
-	}
-	CarManagerCommon::CsvReader* p = new CsvReader{};
-	p->TestFunction();
+	FaceRecognizer f;
+	f.ConfirmTest();
+	//HMODULE dll = LoadLibrary(L"CarManagerDll.dll");
+	//if (!dll)
+	//{
+	//	cout << "Fail load library" << endl;
+	//}
+	//CsvFactory f = reinterpret_cast<CsvFactory>(GetProcAddress(dll, "CreateCsvReader2"));
+	//if (!f)
+	//{
+	//	cerr << "Unable to load CreateLogarithmicMath from DLL!\n";
+	//	FreeLibrary(dll);
+	//}
+	//CarManagerCommon::CsvReader* p = new CsvReader{};
+	//p->TestFunction();
 }
 	//CsvReader kinds("../车辆分类信息表.csv",'\t');
 	//CsvReader basic("../车辆基本信息表.csv",'\t');
