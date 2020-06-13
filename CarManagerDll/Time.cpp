@@ -1,3 +1,10 @@
+#pragma once
+#ifdef TIME_EXPORT
+#define Time_API __declspec(dllexport)
+#else
+#define Time_API __declspec(dllimport)
+#endif // TIME_EXPORT
+
 #include"Time.h"
 #include<chrono>
 #include<ctime>

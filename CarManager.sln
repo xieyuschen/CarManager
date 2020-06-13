@@ -5,6 +5,8 @@ VisualStudioVersion = 16.0.29728.190
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "CarManager", "CarManager\CarManager.vcxproj", "{2604264C-7F86-4B2D-9CF4-C7B0885B7E63}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "CarManagerDll", "CarManagerDll\CarManagerDll.vcxproj", "{604F158D-4EB5-42D5-AFDA-6698D46AE181}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -21,6 +23,14 @@ Global
 		{2604264C-7F86-4B2D-9CF4-C7B0885B7E63}.Release|x64.Build.0 = Release|x64
 		{2604264C-7F86-4B2D-9CF4-C7B0885B7E63}.Release|x86.ActiveCfg = Release|Win32
 		{2604264C-7F86-4B2D-9CF4-C7B0885B7E63}.Release|x86.Build.0 = Release|Win32
+		{604F158D-4EB5-42D5-AFDA-6698D46AE181}.Debug|x64.ActiveCfg = Debug|x64
+		{604F158D-4EB5-42D5-AFDA-6698D46AE181}.Debug|x64.Build.0 = Debug|x64
+		{604F158D-4EB5-42D5-AFDA-6698D46AE181}.Debug|x86.ActiveCfg = Debug|Win32
+		{604F158D-4EB5-42D5-AFDA-6698D46AE181}.Debug|x86.Build.0 = Debug|Win32
+		{604F158D-4EB5-42D5-AFDA-6698D46AE181}.Release|x64.ActiveCfg = Release|x64
+		{604F158D-4EB5-42D5-AFDA-6698D46AE181}.Release|x64.Build.0 = Release|x64
+		{604F158D-4EB5-42D5-AFDA-6698D46AE181}.Release|x86.ActiveCfg = Release|Win32
+		{604F158D-4EB5-42D5-AFDA-6698D46AE181}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

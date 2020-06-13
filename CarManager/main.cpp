@@ -3,15 +3,15 @@
 #include<sstream>
 #include<string>
 #include<vector>
-#include"CsvReader.h"
-#include"Info.h"
 #include<Windows.h>
 #include<regex>
 #include<map>
 #include<iomanip>
 #include<sstream>
 #include<fstream>
+
 using namespace std;
+
 #include"Time.h"
 #include<functional>
 template<typename T>
