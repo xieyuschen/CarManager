@@ -144,15 +144,10 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="CsvReader.cpp" />
-    <ClCompile Include="Factory.cpp" />
-    <ClCompile Include="Info.cpp" />
-    <ClCompile Include="TimeMe.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="CsvReader.h" />
-    <ClInclude Include="Factory.h" />
-    <ClInclude Include="Info.h" />
-    <ClInclude Include="TimeMe.h" />
+    <ClInclude Include="ICsvReader.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
