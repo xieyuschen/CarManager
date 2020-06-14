@@ -1,5 +1,4 @@
 LIBRARY "CarManagerDll"
-
 EXPORTS
-Test @ 1
-LIBRARY
+	CreateTestClassInstance @ 1
+	CallClassTester @ 2

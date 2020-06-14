@@ -5,11 +5,14 @@ namespace CarManagerCsharp
     class Program
     {
 
-        [DllImport(@"E:\Code\CarManager\Debug\CarManagerDll.dll", EntryPoint = "Test", CallingConvention = CallingConvention.Cdecl)]
-        public static extern void Test();
+        [DllImport(@"E:\Code\CarManager\Debug\CarManagerDll.dll",CallingConvention = CallingConvention.Cdecl)]
+        public static extern void CreateTestClassInstance();
+        [DllImport(@"E:\Code\CarManager\Debug\CarManagerDll.dll", CallingConvention = CallingConvention.Cdecl)]
+        public static extern void CallClassTester();
         static void Main(string[] args)
         {
-            Test();
+            CreateTestClassInstance();
+            CallClassTester();
         }
     }
 }

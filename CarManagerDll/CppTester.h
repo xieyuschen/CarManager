@@ -4,7 +4,20 @@
 #else
 #define CppTester_API __declspec(dllimport)
 #endif // CPPTESTER_EXPORT
-
+class TestClass {
+public:
+	void ClassTester();
+	void ClassTester(int n);
+	TestClass(int n);
+private:
+	int value;
+};
+TestClass* staobject;
 extern "C" {
-	void Test();
+	void CreateTestClassInstance(int val) {
+		staobject=new TestClass(val);
+	}
+	void CallClassTester() {
+		staobject->ClassTester();
+	}
 }
