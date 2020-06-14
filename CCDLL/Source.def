@@ -1,0 +1,4 @@
+LIBRARY "CCDLL"
+
+EXPORTS
+	CsvReader @ 1
