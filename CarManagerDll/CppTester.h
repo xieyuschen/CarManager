@@ -13,11 +13,16 @@ private:
 	int value;
 };
 TestClass* staobject;
+
+//there is nothing wrong about function overload
 extern "C" {
 	void CreateTestClassInstance(int val) {
 		staobject=new TestClass(val);
 	}
 	void CallClassTester() {
 		staobject->ClassTester();
+	}
+	void CallClassTestInt(int n) {
+		staobject->ClassTester(n);
 	}
 }

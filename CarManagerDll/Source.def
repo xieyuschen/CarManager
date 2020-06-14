@@ -2,3 +2,4 @@ LIBRARY "CarManagerDll"
 EXPORTS
 	CreateTestClassInstance @ 1
 	CallClassTester @ 2
+	CallClassTestInt @ 3
