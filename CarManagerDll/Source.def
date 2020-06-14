@@ -1,4 +1,5 @@
 LIBRARY "CarManagerDll"
 
 EXPORTS
-add @ 1
+Test @ 1
+LIBRARY
