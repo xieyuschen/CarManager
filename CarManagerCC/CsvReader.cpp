@@ -13,13 +13,7 @@ const char** CsvReader(const char* path,unsigned row) {
 	{
 		char* tmp = strdup(line);
 		lines[i] = tmp;
-		//int j = 0;
-		//const char* tok;
-		//for (tok = strtok(line, "\t"); tok && *tok; j++, tok = strtok(NULL, "\t\n"))
-		//{
-		//	printf("%s\t", tok);
-		//}
-		//printf("\n");
+
 		i++;
 	}
 	return lines;

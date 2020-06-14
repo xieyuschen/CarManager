@@ -6,10 +6,10 @@ typedef struct CarType {
 };
 typedef struct CarDetail {
 	int CarNum;
-	char CarPlateId[10];
+	char* CarPlateId;
 	char CarType;
-	char Name[20];
-	char GearType[10];
+	char* Name;
+	char* GearType;
 	float Price;
 	char State;
 };
