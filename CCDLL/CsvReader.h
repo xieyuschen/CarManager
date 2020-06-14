@@ -8,5 +8,9 @@
 //
 //}
 #include"Structs.h"
+#ifdef CSVREADER_H
+#define CSVREADER_H
+const char** CsvReader(const char* path, unsigned rows);
 
-void CsvReader(const char* path, CarDetail detail);
+#endif // CSVREADER_H
+

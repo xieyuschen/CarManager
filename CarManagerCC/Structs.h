@@ -13,7 +13,7 @@ typedef struct CarDetail {
 	float Price;
 	char State;
 };
-typedef struct BookingIngo {
+typedef struct BookingInfo {
 	char BookingId[20];
 	char IdentityId[20];
 	char CustomerName[20];
@@ -24,4 +24,13 @@ typedef struct BookingIngo {
 	char ActualReturnTime[20];
 	float DeservePrice;
 	float ActualPrice;
+};
+typedef struct CarNode {
+	BookingInfo info;
+	CarDetail detail;
+	CarNode* next;
+};
+typedef struct Node {
+	CarNode* start;
+	Node* next;
 };
