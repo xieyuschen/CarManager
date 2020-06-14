@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 namespace CarManagerCsharp
 {
@@ -8,11 +9,13 @@ namespace CarManagerCsharp
         [DllImport(@"E:\Code\CarManager\Debug\CarManagerDll.dll",CallingConvention = CallingConvention.Cdecl)]
         public static extern void CreateTestClassInstance();
         [DllImport(@"E:\Code\CarManager\Debug\CarManagerDll.dll", CallingConvention = CallingConvention.Cdecl)]
-        public static extern void CallClassTestInt(int n);
+        public static extern void CallString(byte[] buf);
         static void Main(string[] args)
         {
-            CreateTestClassInstance();
-            CallClassTestInt(3);
+            byte[] p = new byte[300];
+            CallString(p);
+            var str = System.Text.Encoding.UTF8.GetString(p);
+            Console.WriteLine(str);
         }
     }
 }

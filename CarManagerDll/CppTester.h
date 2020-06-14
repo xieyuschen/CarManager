@@ -1,9 +1,11 @@
 #pragma once
+#pragma warning(disable:4996)
 #ifdef CPPTESTER_EXPORT
 #define CppTester_API __declspec(dllexport)
 #else
 #define CppTester_API __declspec(dllimport)
 #endif // CPPTESTER_EXPORT
+#include<string>
 class TestClass {
 public:
 	void ClassTester();
@@ -24,5 +26,8 @@ extern "C" {
 	}
 	void CallClassTestInt(int n) {
 		staobject->ClassTester(n);
+	}
+	void CallString(char* buf) {
+		strcpy(buf, "helloworld");
 	}
 }
