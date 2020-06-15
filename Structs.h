@@ -30,8 +30,10 @@ typedef struct CarNode {
 	BookingInfo info;
 	CarDetail detail;
 	CarNode* next;
+	CarNode* prir;
 };
 typedef struct Node {
 	CarNode* start;
 	Node* next;
+	char type;
 };

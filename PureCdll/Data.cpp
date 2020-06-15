@@ -2,7 +2,9 @@
 #include<memory>
 #include <string.h>
 #include<sstream>
+#include"pch.h"
 #pragma warning(disable:4996)
+#define DATA_EXPORT
 CarDetail* DeSerilizeCarDeail(const char* str) {
 	std::stringstream strValue;
 	int j = 0;
@@ -113,3 +115,25 @@ CarType* DeSerilizeCarType(const char* str) {
 	}
 	return detail;
 }
+void ReadCarDetail(Node* head, CarDetail* carDetail) {
+	Node* temp = head;
+	CarNode* elem = (CarNode*)malloc(sizeof(CarNode));
+	elem->detail = *carDetail;
+	Node* last;
+	while (temp!=nullptr)
+	{
+		//找到标号，标号下已有内容
+		if (temp->type == carDetail->CarType) {
+			 	auto h = temp->start;
+				while (h->next != nullptr)
+					h = h->next;
+				h->next = elem;
+				elem->prir = h;
+			return;
+		}
+		last = temp;
+		temp = temp->next;
+	}
+	
+}
+void ReadBookingInfo(Node* head, BookingInfo*) {}
