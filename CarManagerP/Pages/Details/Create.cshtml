@@ -1,0 +1,54 @@
+﻿@page
+@model CarManagerP.Pages.CarDetails.CreateModel;
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+<h4>Add a Car with Details here</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Details.CarNum" class="control-label"></label>
+                <input asp-for="Details.CarNum" class="form-control" />
+                <span asp-validation-for="Details.CarNum" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Details.CarPlateId" class="control-label"></label>
+                <input asp-for="Details.CarPlateId" class="form-control" />
+                <span asp-validation-for="Details.CarPlateId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Details.CarType" class="control-label"></label>
+                <input asp-for="Details.CarType" class="form-control" />
+                <span asp-validation-for="Details.CarType" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Details.GearType" class="control-label"></label>
+                <input asp-for="Details.GearType" class="form-control" />
+                <span asp-validation-for="Details.GearType" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Details.Name" class="control-label"></label>
+                <input asp-for="Details.Name" class="form-control" />
+                <span asp-validation-for="Details.Name" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Details.Price" class="control-label"></label>
+                <input asp-for="Details.Price" class="form-control" />
+                <span asp-validation-for="Details.Price" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Details.State" class="control-label"></label>
+                <input asp-for="Details.State" class="form-control" />
+                <span asp-validation-for="Details.State" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>

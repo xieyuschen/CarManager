@@ -24,7 +24,7 @@ namespace CarManagerP.Pages.CarDetails
             const string path = @"..\车辆基本信息表.csv";
             CarDetails = new List<CarDetail>();
             FileStream fStream = new FileStream(path, FileMode.Open, FileAccess.Read, FileShare.ReadWrite);
-            StreamReader reader = new StreamReader(fStream,  Encoding.GetEncoding("hz-gb-2312"));
+            StreamReader reader = new StreamReader(fStream);
             reader.ReadLine();
             while (!reader.EndOfStream)
             {

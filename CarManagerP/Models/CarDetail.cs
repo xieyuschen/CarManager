@@ -14,5 +14,13 @@ namespace CarManagerP.Models
 		public string GearType;
 		public float Price;
 		public string State;
+
+		public string SearchString;
+
+		public override string ToString()
+		{
+			string t = "\t";
+			return CarNum + t + CarPlateId + t + CarType + t + Name + t + GearType + t + Price + t + State;
+		}
 	}
 }
