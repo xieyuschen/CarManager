@@ -9,7 +9,7 @@ namespace CarManagerP.Models
     {
 		public int CarNum;
 		public string CarPlateId;
-		public char CarType;
+		public string CarType;
 		public string Name;
 		public string GearType;
 		public float Price;
