@@ -1,7 +1,7 @@
 #pragma once
 typedef struct CarType {
 	char CarType;
-	char CarTypeName[20];
+	char* CarTypeName;
 	int NumInPros;
 };
 typedef struct CarDetail {
@@ -14,16 +14,17 @@ typedef struct CarDetail {
 	char State;
 };
 typedef struct BookingInfo {
-	char BookingId[20];
-	char IdentityId[20];
-	char CustomerName[20];
-	char CarId[4];
-	char FetchTime[20];
-	char ReturnTime[20];
+	char* BookingId;
+	char* IdentityId;
+	char* CustomerName;
+	char* CarId;
+	char* FetchTime;
+	char* ReturnTime;
 	float Deposit;
-	char ActualReturnTime[20];
+	char* ActualReturnTime;
 	float DeservePrice;
 	float ActualPrice;
+	char* Telephone;
 };
 typedef struct CarNode {
 	BookingInfo info;
