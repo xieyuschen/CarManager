@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Security.Permissions;
+using System.Text;
 using System.Text.Json;
 using System.Threading.Tasks;
 using CarManagerP.Models;
@@ -19,10 +20,11 @@ namespace CarManagerP.Pages.CarDetails
         public List<CarDetail> CarDetails { get; set; }
         public BookInfoModel()
         {
+            //https://localhost:44365/CarDetal/Cardetails
             const string path = @"..\车辆基本信息表.csv";
             CarDetails = new List<CarDetail>();
             FileStream fStream = new FileStream(path, FileMode.Open, FileAccess.Read, FileShare.ReadWrite);
-            StreamReader reader = new StreamReader(fStream);
+            StreamReader reader = new StreamReader(fStream,  Encoding.GetEncoding("hz-gb-2312"));
             reader.ReadLine();
             while (!reader.EndOfStream)
             {

@@ -1,5 +1,5 @@
 ﻿@page
-@model CarManagerP.Pages.BookPage;
+@model CarManagerP.Pages.CarDetails.BookInfoModel
 @addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
 
 <h1>BookInfo</h1>
@@ -26,7 +26,7 @@
             </tr>
         </thead>
         <tbody>
-            @foreach (var item in )
+            @foreach (var item in Model.CarDetails)
             {
             <tr>
                 <td>
