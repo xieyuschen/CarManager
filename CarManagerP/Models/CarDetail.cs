@@ -7,15 +7,15 @@ namespace CarManagerP.Models
 {
     public class CarDetail
     {
-		public int CarNum;
-		public string CarPlateId;
-		public string CarType;
-		public string Name;
-		public string GearType;
-		public float Price;
-		public string State;
+		public int CarNum { get; set; }
+		public string CarPlateId { get; set; }
+		public string CarType { get; set; }
+		public string Name { get; set; }
+		public string GearType { get; set; }
+		public float Price { get; set; }
+		public string State { get; set; }
 
-		public string SearchString;
+		public string SearchString { get; set; }
 
 		public override string ToString()
 		{

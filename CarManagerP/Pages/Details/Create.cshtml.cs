@@ -20,12 +20,13 @@ namespace CarManagerP.Pages.CarDetails
         }
         public async Task<IActionResult> OnPostAsync()
         {
+            const string path = "../1.txt";// @"..\车辆基本信息表.csv";
+
             //写入时要先把所有的读出来，再一行行的读进去避免把原有的数据给覆盖掉
-            FileStream fStream = new FileStream("", FileMode.OpenOrCreate);
+            FileStream fStream = new FileStream(path, FileMode.OpenOrCreate);
             StreamReader reader = new StreamReader(fStream);
             string contents = reader.ReadToEnd();
             reader.Close();
-            const string path = @"..\车辆基本信息表.csv";
 
             FileStream fhelp = new FileStream(path, FileMode.OpenOrCreate, FileAccess.Write);
             StreamWriter writer = new StreamWriter(fhelp);
