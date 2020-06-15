@@ -1,0 +1,47 @@
+﻿@page
+@model BookStore.Pages.CustomerPage.CreateModel
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+<h4>Add a new Customer Record here!</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        <div class="form-group">
+            <label asp-for="Customer.Name" class="control-label"></label>
+            <input asp-for="Customer.Name" class="form-control" />
+            <span asp-validation-for="Customer.Name" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="Customer.BookName" class="control-label"></label>
+            <input asp-for="Customer.BookName" class="form-control" />
+            <span asp-validation-for="Customer.BookName" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="Customer.Count" class="control-label"></label>
+            <input asp-for="Customer.Count" class="form-control" />
+            <span asp-validation-for="Customer.Count" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="Customer.TotalPrice" class="control-label"></label>
+            <input asp-for="Customer.TotalPrice" class="form-control" />
+            <span asp-validation-for="Customer.TotalPrice" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="Customer.BookedId" class="control-label"></label>
+            <input asp-for="Customer.BookedId" class="form-control" />
+            <span asp-validation-for="Customer.BookedId" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="Customer.BuyTime" class="control-label"></label>
+            <input asp-for="Customer.BuyTime" class="form-control" />
+            <span asp-validation-for="Customer.BuyTime" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <input type="submit" value="Create" class="btn btn-primary" />
+        </div>
+    </div>
+</div>

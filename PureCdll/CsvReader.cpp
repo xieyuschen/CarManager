@@ -6,23 +6,30 @@
 #include <stdlib.h>
 #pragma warning(disable:4996)
 
-const char** CsvReader(const char* path, unsigned row) {
+const char* CsvReader(const char* path, unsigned row) {
+	return "hello";
 	FILE* file;
 	file = fopen(path, "r");
-	const char** lines = new const char* [row];
 	int i = 0;
 	char line[4098];
-	while (fgets(line, 4098, file) && (i < row))
+	while (fgets(line, 4098, file))
 	{
-		char* tmp = strdup(line);
-		lines[i] = tmp;
-
-		i++;
+		if (row == i++) {
+			char* tmp = strdup(line);
+			return tmp;
+		}
 	}
-	return lines;
+	return "";
 }
 
-void Test() {
-	printf("Helloworld");
+const char* Test() {
+	const char* str = new char[20];
+	str = "helloword";
+	return str;
 }
 
+template<typename T>
+class Hello {
+public:
+	T value;
+};

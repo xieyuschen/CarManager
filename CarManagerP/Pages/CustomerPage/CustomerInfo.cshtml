@@ -1,0 +1,47 @@
+﻿@page
+@model BookStore.Pages.CustomerPage.CustomerInfoModel
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+
+
+<h1>CustomerInfo</h1>
+<form method="post">
+    <table class="table">
+        <thead>
+            <tr>
+                <th>客户姓名</th>
+                <th>书名</th>
+                <th>数量</th>
+                <th>总价</th>
+                <th>订单号</th>
+                <th>购买时间</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model.Customers)
+            {
+
+                <tr>
+                    <td>
+                        @Html.DisplayFor(t => item.Name)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(t => item.BookName)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(t => item.Count)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(t => item.TotalPrice)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(t => item.BookedId)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(t => item.BuyTime)
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+    <a asp-page="Create">AddNew</a>
+</form>

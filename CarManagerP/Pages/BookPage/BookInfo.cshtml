@@ -1,0 +1,58 @@
+﻿@page
+@model BookStore.Pages.Logic.BookInfoModel
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+
+<h1>BookInfo</h1>
+<a asp-page="Create">Add New</a>
+
+
+<form>
+    <p>
+        Title: <input type="text" asp-for="@Model.SearchString" />
+        <input type="submit" value="Filter" />
+    </p>
+</form>
+<form method="post">
+    <table class="table">
+        <thead>
+            <tr>
+                <th>车辆编号</th>
+                <th>车牌号</th>
+                <th>车辆类型编码</th>
+                <th>车辆名称</th>
+                <th>排挡方式/th>
+                <th>每日租金</th>
+                <th>出租状态</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model.CarDetails)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(t => item.Id)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(t => item.Name)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(t => item.Author)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(t => item.PublishDate)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(t => item.Price)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(t => item.Discount)
+                    </td>
+                    <td>
+                        <a asp-page="Edit" asp-route-id="@item.Id">Edit</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+</form>

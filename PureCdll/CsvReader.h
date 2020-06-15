@@ -6,8 +6,8 @@
 #endif
 #include"Structs.h"
 extern "C" {
-	CsvReader_API const char** CsvReader(const char* path, unsigned rows);
-	CsvReader_API void Test();
+	CsvReader_API const char* CsvReader(const char* path, unsigned rows);
+	CsvReader_API const char* Test();
 }
 
 
