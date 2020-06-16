@@ -43,9 +43,6 @@
             <th>
                 @Html.DisplayNameFor(model => model.BookIngInfos[0].Telephone)
             </th>
-            <th>
-                @Html.DisplayNameFor(model => model.BookIngInfos[0].SearchString)
-            </th>
             <th></th>
         </tr>
     </thead>
@@ -82,9 +79,7 @@
             <td>
                 @Html.DisplayFor(modelItem => item.Telephone)
             </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.SearchString)
-            </td>
+
             <td>
                 <a asp-page="./Edit" asp-route-id="@item.Id">Edit</a> |
                 <a asp-page="./Details" asp-route-id="@item.Id">Details</a> |

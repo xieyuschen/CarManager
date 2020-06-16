@@ -14,7 +14,6 @@ namespace CarManagerP.Models
 		public string GearType { get; set; }
 		public float Price { get; set; }
 		public string State { get; set; }
-
 		public string SearchString { get; set; }
 
 		public override string ToString()
