@@ -6,12 +6,19 @@
 }
 
 <h1>Index</h1>
-<form>
+<form method="post">
+    @Html.DropDownListFor(m => Model.SearchOption, new List<SelectListItem>
+           { new SelectListItem{Text="Male", Value="M"},
+             new SelectListItem{Text="Female", Value="F"}}, "Please select")
     <p>
         Title: <input type="text" asp-for="@Model.SearchString" />
         <input type="submit" value="Filter" />
     </p>
 </form>
+@*<form method="get">
+    
+
+</form>*@
 <p>
     <a asp-page="Create">Create New</a>
 </p>
@@ -46,36 +53,37 @@
         </tr>
     </thead>
     <tbody>
-@foreach (var item in Model.CarDetails) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.CarNum)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.CarPlateId)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.CarType)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Name)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.GearType)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Price)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.State)
-            </td>
+        @foreach (var item in Model.CarDetails)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CarNum)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CarPlateId)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CarType)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.GearType)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Price)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.State)
+                </td>
 
-            <td>
-                <a asp-page="./Edit" asp-route-id="@item.CarNum">Edit</a> |
-                <a asp-page="./Details" asp-route-id="@item.CarNum">Details</a> |
-                <a asp-page="./Delete" asp-route-id="@item.CarNum">Delete</a>
-            </td>
-        </tr>
-}
+                <td>
+                    <a asp-page="./Edit" asp-route-id="@item.CarNum">Edit</a> |
+                    <a asp-page="./Details" asp-route-id="@item.CarNum">Details</a> |
+                    <a asp-page="./Delete" asp-route-id="@item.CarNum">Delete</a>
+                </td>
+            </tr>
+        }
     </tbody>
 </table>

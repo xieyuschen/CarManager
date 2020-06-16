@@ -17,7 +17,8 @@ namespace CarManagerP.Pages.Detail
         public string SearchString { get; set; }
         [BindProperty]
         public List<CarDetail> CarDetails { get; set; }
-
+        [BindProperty]
+        public string SearchOption { get; set; }
         public IndexModel()
         {
             const string path = @"..\车辆基本信息表.csv";
@@ -27,6 +28,11 @@ namespace CarManagerP.Pages.Detail
         }
 
         public async Task OnGetAsync()
+        {
+            if (!string.IsNullOrEmpty(SearchString))
+                CarDetails = CarDetails.Where(t => t.Name.Contains(SearchString)).ToList();
+        }
+        public async Task OnAsync()
         {
             if (!string.IsNullOrEmpty(SearchString))
                 CarDetails = CarDetails.Where(t => t.Name.Contains(SearchString)).ToList();
