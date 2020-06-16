@@ -9,6 +9,8 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 using System.Data;
 using FusionCharts.DataEngine;
 using FusionCharts.Visualization;
+using System.IO;
+using System.Text;
 
 namespace CarManagerP.Pages.Detail
 {
@@ -117,8 +119,29 @@ namespace CarManagerP.Pages.Detail
                         break;
                 }
             }
-        public async Task OnPostTestAsync()
+        public async Task OnPostSaveFileAsync()
         {
+            string path = @"..\AGenerateFile.csv";
+            try
+            {
+                // Create the file, or overwrite if the file exists.
+                using (FileStream fs = System.IO.File.Create(path))
+                {
+                    string str="";
+                    foreach(var item in sta)
+                    {
+                        str =str+ item.ToString() + "\n";
+                    }
+                    byte[] info = new UTF8Encoding(true).GetBytes(str);
+                    // Add some information to the file.
+                    fs.Write(info, 0, info.Length);
+                }
+            }
+
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.ToString());
+            }
 
         }
     }

@@ -11,5 +11,10 @@ namespace CarManagerP.Models
         public  int Total { get; set; }
         public int rent { get; set; }
         public int free { get; set; }
+        public override string ToString()
+        {
+            string t = "\t";
+            return Type + t + Total + t + rent + t + free;
+        }
     }
 }

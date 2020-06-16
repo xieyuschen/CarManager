@@ -17,14 +17,10 @@
 {
 
 
-<table class="table">
+    <table class="table">
         <thead>
             <tr>
-                <div class="col-lg-1">
-                    <form asp-page-handler="Test" method="post">
-                        <button class="btn btn-default">Test</button>
-                    </form>
-                </div>
+
                 <th>
                     @Html.DisplayNameFor(model => model.sta[0].Type)
                 </th>
@@ -60,8 +56,15 @@
             }
         </tbody>
     </table>
+    <div class="col-lg-1">
+        <form asp-page-handler="SaveFile" method="post">
+            <button class="btn btn-default">Generate A File</button>
+        </form>
+    </div>
 }
-
+@{
+    //https://www.fusioncharts.com/dev/fusioncharts-aspnet-visualization/getting-started/fusioncharts-net-using-razor
+}
 @if (Model.SearchOption == "BarChart")
 {
     <head>
