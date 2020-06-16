@@ -6,7 +6,12 @@
 }
 
 <h1>Index</h1>
-
+<form>
+    <p>
+        Title: <input type="text" asp-for="@Model.SearchString" />
+        <input type="submit" value="Filter" />
+    </p>
+</form>
 <p>
     <a asp-page="Create">Create New</a>
 </p>
@@ -64,9 +69,7 @@
             <td>
                 @Html.DisplayFor(modelItem => item.State)
             </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.SearchString)
-            </td>
+
             <td>
                 <a asp-page="./Edit" asp-route-id="@item.CarNum">Edit</a> |
                 <a asp-page="./Details" asp-route-id="@item.CarNum">Details</a> |
