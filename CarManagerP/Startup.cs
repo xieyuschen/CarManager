@@ -29,6 +29,9 @@ namespace CarManagerP
 
             services.AddDbContext<CarDetailsContext>(options =>
                     options.UseSqlServer(Configuration.GetConnectionString("CarDetailsContext")));
+
+            services.AddDbContext<CarManagerPContext>(options =>
+                    options.UseSqlServer(Configuration.GetConnectionString("CarManagerPContext")));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

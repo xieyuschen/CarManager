@@ -3,6 +3,10 @@
     "mssql1": {
       "type": "mssql.local",
       "connectionId": "CarDetailsContext"
+    },
+    "mssql2": {
+      "type": "mssql.local",
+      "connectionId": "CarManagerPContext"
     }
   }
 }

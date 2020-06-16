@@ -5,9 +5,10 @@ using System.Threading.Tasks;
 
 namespace CarManagerP.Models
 {
+	
     public class BookIngInfo
-    {
-		public string BookingId { get; set; }
+    {		
+		public string Id { get; set; }
 		public string IdentityId { get; set; }
 		public string CustomerName { get; set; }
 		public string CarId { get; set; }
