@@ -1,5 +1,3 @@
-CarNum	CarPlateId	CarType	CarName	GearType	PricePerDay	State
-1	E_AW123Q	1	Volkswagen LangYi	1.6Automatic	135	y
 2	E_AW223Q	1	Volkswagen LangYi	1.6Manual	110	y
 3	X_AA323Q	1	Buick Yinglang	1.5Automatic	116	y
 4	X_AA4257	1	Buick Yinglang	1.5Automatic	116	y
@@ -15,5 +13,8 @@ CarNum	CarPlateId	CarType	CarName	GearType	PricePerDay	State
 14	E_A3456Q	3	Audi A6	1.8TAutomatic	578	n
 16	E_AW12UY	4	Chevrolet Copac	2.4Automatic	221	y
 17	E_AW12TU	4	Bekoncora	1.4TAutomatic	154	n
+18	X_AB323Q	4	Bovo BX5	1.4TAutomatic	127	n
+1	E_AW123Q	1	Volkswagen LangYii	1.6Automatic	135	y
+Automatic	154	n
 18	X_AB323Q	4	Bovo BX5	1.4TAutomatic	127	n
 
