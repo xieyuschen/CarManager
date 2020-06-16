@@ -23,10 +23,16 @@
                 <input asp-for="BookIngInfo.IdentityId" class="form-control" />
                 <span asp-validation-for="BookIngInfo.IdentityId" class="text-danger"></span>
             </div>
+
             <div class="form-group">
                 <label asp-for="BookIngInfo.CustomerName" class="control-label"></label>
                 <input asp-for="BookIngInfo.CustomerName" class="form-control" />
                 <span asp-validation-for="BookIngInfo.CustomerName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="BookIngInfo.Telephone" class="control-label"></label>
+                <input asp-for="BookIngInfo.Telephone" class="form-control" />
+                <span asp-validation-for="BookIngInfo.Telephone" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="BookIngInfo.CarId" class="control-label"></label>
@@ -63,16 +69,8 @@
                 <input asp-for="BookIngInfo.ActualPrice" class="form-control" />
                 <span asp-validation-for="BookIngInfo.ActualPrice" class="text-danger"></span>
             </div>
-            <div class="form-group">
-                <label asp-for="BookIngInfo.Telephone" class="control-label"></label>
-                <input asp-for="BookIngInfo.Telephone" class="form-control" />
-                <span asp-validation-for="BookIngInfo.Telephone" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="BookIngInfo.SearchString" class="control-label"></label>
-                <input asp-for="BookIngInfo.SearchString" class="form-control" />
-                <span asp-validation-for="BookIngInfo.SearchString" class="text-danger"></span>
-            </div>
+
+
             <div class="form-group">
                 <input type="submit" value="Create" class="btn btn-primary" />
             </div>

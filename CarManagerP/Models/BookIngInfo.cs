@@ -28,8 +28,8 @@ namespace CarManagerP.Models
 		public override string ToString()
 		{
 			string t = "\t";
-			return Id + t + IdentityId + t + CustomerName + t + Telephone + t + CarId + t + FetchTime + t + ReturnTime + t + Deposit + t
-				+ ActualReturnTime+t + DeservePrice+t + ActualReturnTime + t + DeservePrice + t + ActualReturnTime;
-		}
+            return Id + t + IdentityId + t + CustomerName + t + Telephone + t + CarId + t + FetchTime + t + ReturnTime + t + Deposit + t
+            + ActualReturnTime + t + DeservePrice + t;
+        }
 	}
 }

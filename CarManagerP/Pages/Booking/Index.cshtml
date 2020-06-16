@@ -20,6 +20,9 @@
                 @Html.DisplayNameFor(model => model.BookIngInfos[0].CustomerName)
             </th>
             <th>
+                @Html.DisplayNameFor(model => model.BookIngInfos[0].Telephone)
+            </th>
+            <th>
                 @Html.DisplayNameFor(model => model.BookIngInfos[0].CarId)
             </th>
             <th>
@@ -40,9 +43,7 @@
             <th>
                 @Html.DisplayNameFor(model => model.BookIngInfos[0].ActualPrice)
             </th>
-            <th>
-                @Html.DisplayNameFor(model => model.BookIngInfos[0].Telephone)
-            </th>
+
             <th></th>
         </tr>
     </thead>
@@ -55,6 +56,10 @@
             <td>
                 @Html.DisplayFor(modelItem => item.CustomerName)
             </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Telephone)
+            </td>
+
             <td>
                 @Html.DisplayFor(modelItem => item.CarId)
             </td>
@@ -75,9 +80,6 @@
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.ActualPrice)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Telephone)
             </td>
 
             <td>

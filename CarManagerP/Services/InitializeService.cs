@@ -27,6 +27,8 @@ namespace CarManagerP.Services
                 {
                     //订单编号    身份证号    客人姓名    手机号码    租用车辆编号  取车时间    预约还车时间
                     //押金（元）	实际还车时间  应缴费用（元）	实缴费用（元）
+
+
                     Id = strs[0],
                     IdentityId = strs[1],
                     CustomerName = strs[2],
@@ -37,7 +39,8 @@ namespace CarManagerP.Services
                     Deposit = float.Parse(strs[7]),
                     ActualReturnTime = strs[8],
                     DeservePrice = float.Parse(strs[9]),
-                    ActualPrice = float.Parse(strs[10])
+                    ActualPrice = float.Parse(strs[10]),
+                    
                 });
             }
             return infos;
