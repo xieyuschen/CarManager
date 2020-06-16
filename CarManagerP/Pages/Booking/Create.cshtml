@@ -1,0 +1,87 @@
+﻿@page
+@model CarManagerP.Pages.Booking.CreateModel
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>BookIngInfo</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="BookIngInfo.Id" class="control-label"></label>
+                <input asp-for="BookIngInfo.Id" class="form-control" />
+                <span asp-validation-for="BookIngInfo.Id" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="BookIngInfo.IdentityId" class="control-label"></label>
+                <input asp-for="BookIngInfo.IdentityId" class="form-control" />
+                <span asp-validation-for="BookIngInfo.IdentityId" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="BookIngInfo.CustomerName" class="control-label"></label>
+                <input asp-for="BookIngInfo.CustomerName" class="form-control" />
+                <span asp-validation-for="BookIngInfo.CustomerName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="BookIngInfo.Telephone" class="control-label"></label>
+                <input asp-for="BookIngInfo.Telephone" class="form-control" />
+                <span asp-validation-for="BookIngInfo.Telephone" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="BookIngInfo.CarId" class="control-label"></label>
+                <input asp-for="BookIngInfo.CarId" class="form-control" />
+                <span asp-validation-for="BookIngInfo.CarId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="BookIngInfo.FetchTime" class="control-label"></label>
+                <input asp-for="BookIngInfo.FetchTime" class="form-control" />
+                <span asp-validation-for="BookIngInfo.FetchTime" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="BookIngInfo.ReturnTime" class="control-label"></label>
+                <input asp-for="BookIngInfo.ReturnTime" class="form-control" />
+                <span asp-validation-for="BookIngInfo.ReturnTime" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="BookIngInfo.Deposit" class="control-label"></label>
+                <input asp-for="BookIngInfo.Deposit" class="form-control" />
+                <span asp-validation-for="BookIngInfo.Deposit" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="BookIngInfo.ActualReturnTime" class="control-label"></label>
+                <input asp-for="BookIngInfo.ActualReturnTime" class="form-control" />
+                <span asp-validation-for="BookIngInfo.ActualReturnTime" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="BookIngInfo.DeservePrice" class="control-label"></label>
+                <input asp-for="BookIngInfo.DeservePrice" class="form-control" />
+                <span asp-validation-for="BookIngInfo.DeservePrice" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="BookIngInfo.ActualPrice" class="control-label"></label>
+                <input asp-for="BookIngInfo.ActualPrice" class="form-control" />
+                <span asp-validation-for="BookIngInfo.ActualPrice" class="text-danger"></span>
+            </div>
+
+
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

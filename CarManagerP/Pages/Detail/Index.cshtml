@@ -1,0 +1,86 @@
+﻿@page
+@model CarManagerP.Pages.Detail.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+<form method="post">
+    @Html.DropDownListFor(m => Model.SearchOption, new List<SelectListItem>
+           { new SelectListItem{Text="Name", Value="Name"},
+             new SelectListItem{Text="CarType", Value="CarType"},
+            new SelectListItem{Text="PlateId", Value="PlateId"}}, "Please select")    
+        Title: <input type="text" asp-for="@Model.SearchString" />
+        <input type="submit" value="Filter" />
+    
+</form>
+<p>
+    <a asp-page="Create">Create New</a>
+</p>
+    <form method="get">
+        <button type="submit" asp-page="./Statistic">Click me to Look at Statistic:)</button>
+    </form>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.CarDetails[0].CarNum)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CarDetails[0].CarPlateId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CarDetails[0].CarType)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CarDetails[0].Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CarDetails[0].GearType)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CarDetails[0].Price)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CarDetails[0].State)
+            </th>
+
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.CarDetails)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CarNum)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CarPlateId)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CarType)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.GearType)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Price)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.State)
+                </td>
+
+                <td>
+                    <a asp-page="./Edit" asp-route-id="@item.CarNum">Edit</a> |
+                    <a asp-page="./Delete" asp-route-id="@item.CarNum">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

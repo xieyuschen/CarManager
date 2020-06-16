@@ -1,0 +1,94 @@
+﻿@page
+@model CarManagerP.Pages.Booking.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-page="Create">Create New</a>
+</p>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.BookIngInfos[0].IdentityId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.BookIngInfos[0].CustomerName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.BookIngInfos[0].Telephone)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.BookIngInfos[0].CarId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.BookIngInfos[0].FetchTime)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.BookIngInfos[0].ReturnTime)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.BookIngInfos[0].Deposit)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.BookIngInfos[0].ActualReturnTime)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.BookIngInfos[0].DeservePrice)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.BookIngInfos[0].ActualPrice)
+            </th>
+
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.BookIngInfos) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.IdentityId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CustomerName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Telephone)
+            </td>
+
+            <td>
+                @Html.DisplayFor(modelItem => item.CarId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FetchTime)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ReturnTime)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Deposit)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ActualReturnTime)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DeservePrice)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ActualPrice)
+            </td>
+
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.Id">Edit</a> |
+                <a asp-page="./Details" asp-route-id="@item.Id">Details</a> |
+                <a asp-page="./Delete" asp-route-id="@item.Id">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
