@@ -34,6 +34,10 @@ namespace CarManagerP.Pages.Detail
         }
         public async Task OnPostAsync()
         {
+            const string path = @"..\车辆基本信息表.csv";
+            CarDetails = new List<CarDetail>();
+            var lists = FileService.ReadFromFile(path);
+            CarDetails = InitializeService.InitializeCarDetail(lists);
             if (!string.IsNullOrEmpty(SearchString))
             {
                 switch (SearchOption)

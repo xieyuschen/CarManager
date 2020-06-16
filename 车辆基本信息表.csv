@@ -1,22 +1,19 @@
-2	��AW223Q	1	��������	1.6�ֶ�	110	y
-3	��AA323Q	1	���Ӣ��	1.5�Զ�	116	y
-4	��AA4257	1	���Ӣ��	1.5�Զ�	116	y
-5	��BC424Q	1	�������	1.4�Զ�	181	y
-6	��BR224Q	2	ѩ��������	1.5T�Զ�	199	y
-7	��C3123T	2	����������	1.8T�Զ�	271	n
-8	��C3124T	2	���￭����	2.0T�Զ�	160	n
-9	��C3125T	2	��˾�Խ	2.4�Զ�	187	n
-10	��AB1267	2	����������	1.8T�Զ�	210	n
-11	��AC1275	3	�ֶ���S90	2.0T�Զ�	463	n
-12	��DC128T	3	����3ϵ	2.0T�Զ�	596	n
-13	��A2345Q	3	��������XTS	2.0T�Զ�	512	n
-14	��A3456Q	3	�µ�A6	1.8T�Զ�	578	n
-15	��AW123U	3	·����������	2.0T�Զ�	672	n
-16	��AW12UY	4	ѩ����������	2.4�Զ�	221	y
-17	��AW12TU	4	��˰�����	1.4T�Զ�	154	n
-18	��AB323Q	4	����BX5	1.4T�Զ�	127	n
-19	��AB4257	4	����BX6	2.0T�Զ�	168	n
-20	��AB4G25	5	2017���GL8	2.4�Զ�	501	n
-21	��AB4H59	5	����µ���	2.4�Զ�	366	n
-22	��AB4J60	5	����µ���	2.4�Զ�	366	n
-1	��AW123Q	1	xxx	1.6�Զ�	135	y
+CarNum	CarPlateId	CarType	CarName	GearType	PricePerDay	State
+1	E_AW123Q	1	Volkswagen LangYi	1.6Automatic	135	y
+2	E_AW223Q	1	Volkswagen LangYi	1.6Manual	110	y
+3	X_AA323Q	1	Buick Yinglang	1.5Automatic	116	y
+4	X_AA4257	1	Buick Yinglang	1.5Automatic	116	y
+5	E_BC424Q	1	Volkswagen Lingdu	1.4Automatic	181	y
+6	E_BR224Q	2	Chevrolet Meribao	1.5TAutomatic	199	y
+7	G_C3123T	2	Volkswagen Passat	1.8TAutomatic	271	n
+8	G_C3124T	2	Toyota Camry	2.0TAutomatic	160	n
+9	G_C3125T	2	Buick Jun Yue	2.4Automatic	187	n
+10	G_AB1267	2	Volkswagen Passat	1.8TAutomatic	210	n
+11	G_AC1275	3	VolvoS90	2.0TAutomatic	463	n
+12	G_DC128T	3	BMW 3 Series	2.0TAutomatic	596	n
+13	E_A2345Q	3	Cadillac XTS	2.0TAutomatic	512	n
+14	E_A3456Q	3	Audi A6	1.8TAutomatic	578	n
+16	E_AW12UY	4	Chevrolet Copac	2.4Automatic	221	y
+17	E_AW12TU	4	Bekoncora	1.4TAutomatic	154	n
+18	X_AB323Q	4	Bovo BX5	1.4TAutomatic	127	n
+

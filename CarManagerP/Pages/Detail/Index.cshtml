@@ -10,8 +10,7 @@
     @Html.DropDownListFor(m => Model.SearchOption, new List<SelectListItem>
            { new SelectListItem{Text="Name", Value="Name"},
              new SelectListItem{Text="CarType", Value="CarType"},
-            new SelectListItem{Text="PlateId", Value="PlateId"}}, "Please select")
-    
+            new SelectListItem{Text="PlateId", Value="PlateId"}}, "Please select")    
         Title: <input type="text" asp-for="@Model.SearchString" />
         <input type="submit" value="Filter" />
     
@@ -47,9 +46,7 @@
             <th>
                 @Html.DisplayNameFor(model => model.CarDetails[0].State)
             </th>
-            <th>
-                @Html.DisplayNameFor(model => model.CarDetails[0].SearchString)
-            </th>
+
             <th></th>
         </tr>
     </thead>
