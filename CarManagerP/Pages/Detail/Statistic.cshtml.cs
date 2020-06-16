@@ -66,7 +66,39 @@ namespace CarManagerP.Pages.Detail
         }
         public async Task OnPostAsync()
         {
-                switch (SearchOption)
+            const string path = @"..\车辆基本信息表.csv";
+            CarDetails = new List<CarDetail>();
+            var lists = FileService.ReadFromFile(path);
+            CarDetails = InitializeService.InitializeCarDetail(lists);
+            sta = new List<CarStatic>();
+            Dictionary<string, CarStatic> dic = new Dictionary<string, CarStatic>();
+            foreach (var item in CarDetails)
+            {
+                if (dic.ContainsKey(item.CarType))
+                {
+                    ++dic[item.CarType].Total;
+                    if (item.State == "y")
+                        ++dic[item.CarType].rent;
+                    else
+                        ++dic[item.CarType].free;
+                }
+                else
+                {
+                    int onrent = item.State == "y" ? 1 : 0;
+                    dic.Add(item.CarType, new CarStatic
+                    {
+                        Type = item.CarType,
+                        Total = 1,
+                        rent = onrent,
+                        free = 1 - onrent
+                    });
+                }
+            }
+            foreach (var item in dic)
+            {
+                sta.Add(item.Value);
+            }
+            switch (SearchOption)
                 {
                     case "TotalInfo":
 
@@ -121,11 +153,43 @@ namespace CarManagerP.Pages.Detail
             }
         public async Task OnPostSaveFileAsync()
         {
-            string path = @"..\AGenerateFile.csv";
+            string filepath = @"..\AGenerateFile.csv";
+            const string path = @"..\车辆基本信息表.csv";
+            CarDetails = new List<CarDetail>();
+            var lists = FileService.ReadFromFile(path);
+            CarDetails = InitializeService.InitializeCarDetail(lists);
+            sta = new List<CarStatic>();
+            Dictionary<string, CarStatic> dic = new Dictionary<string, CarStatic>();
+            foreach (var item in CarDetails)
+            {
+                if (dic.ContainsKey(item.CarType))
+                {
+                    ++dic[item.CarType].Total;
+                    if (item.State == "y")
+                        ++dic[item.CarType].rent;
+                    else
+                        ++dic[item.CarType].free;
+                }
+                else
+                {
+                    int onrent = item.State == "y" ? 1 : 0;
+                    dic.Add(item.CarType, new CarStatic
+                    {
+                        Type = item.CarType,
+                        Total = 1,
+                        rent = onrent,
+                        free = 1 - onrent
+                    });
+                }
+            }
+            foreach (var item in dic)
+            {
+                sta.Add(item.Value);
+            }
             try
             {
                 // Create the file, or overwrite if the file exists.
-                using (FileStream fs = System.IO.File.Create(path))
+                using (FileStream fs = System.IO.File.Create(filepath))
                 {
                     string str="";
                     foreach(var item in sta)

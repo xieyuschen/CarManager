@@ -5,7 +5,11 @@
 }
 
 <h1>Statistic</h1>
-
+<div class="col-lg-1">
+    <form asp-page-handler="SaveFile" method="post">
+        <button class="btn btn-link">GenerateFile</button>
+    </form>
+</div>
 <form method="post">
     @Html.DropDownListFor(m => Model.SearchOption, new List<SelectListItem>
            { new SelectListItem{Text="CarTypeTotalInfo", Value="TotalInfo"},
@@ -56,11 +60,7 @@
             }
         </tbody>
     </table>
-    <div class="col-lg-1">
-        <form asp-page-handler="SaveFile" method="post">
-            <button class="btn btn-default">Generate A File</button>
-        </form>
-    </div>
+
 }
 @{
     //https://www.fusioncharts.com/dev/fusioncharts-aspnet-visualization/getting-started/fusioncharts-net-using-razor
