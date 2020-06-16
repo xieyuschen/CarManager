@@ -11,14 +11,18 @@
            { new SelectListItem{Text="Name", Value="Name"},
              new SelectListItem{Text="CarType", Value="CarType"},
             new SelectListItem{Text="PlateId", Value="PlateId"}}, "Please select")
-    <p>
+    
         Title: <input type="text" asp-for="@Model.SearchString" />
         <input type="submit" value="Filter" />
-    </p>
+    
 </form>
 <p>
     <a asp-page="Create">Create New</a>
 </p>
+    <form method="get">
+        <button type="submit" asp-page="./Statistic">Click me to go to the About page</button>
+    </form>
+
 <table class="table">
     <thead>
         <tr>

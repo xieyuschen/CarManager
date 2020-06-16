@@ -72,7 +72,7 @@ namespace CarManagerP.Services
                     State = strs[6]
                 });
             }
-            return null;
+            return details;
         }
     }
 }

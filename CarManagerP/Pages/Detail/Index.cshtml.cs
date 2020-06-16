@@ -24,7 +24,7 @@ namespace CarManagerP.Pages.Detail
             const string path = @"..\车辆基本信息表.csv";
             CarDetails = new List<CarDetail>();
             var lists = FileService.ReadFromFile(path);
-
+            CarDetails = InitializeService.InitializeCarDetail(lists);
         }
 
         public async Task OnGetAsync()
@@ -51,7 +51,6 @@ namespace CarManagerP.Pages.Detail
                         CarDetails = CarDetails.Where(t => t.Name.Contains(SearchString)).ToList();
                         break;
                 }
-
             }
         }
     }
