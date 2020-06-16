@@ -32,10 +32,27 @@ namespace CarManagerP.Pages.Detail
             if (!string.IsNullOrEmpty(SearchString))
                 CarDetails = CarDetails.Where(t => t.Name.Contains(SearchString)).ToList();
         }
-        public async Task OnAsync()
+        public async Task OnPostAsync()
         {
             if (!string.IsNullOrEmpty(SearchString))
-                CarDetails = CarDetails.Where(t => t.Name.Contains(SearchString)).ToList();
+            {
+                switch (SearchOption)
+                {
+                    case "Name":
+                        CarDetails = CarDetails.Where(t => t.Name.Contains(SearchString)).ToList();
+                        break;
+                    case "CarType":
+                        CarDetails = CarDetails.Where(t => t.CarType.Contains(SearchString)).ToList();
+                        break;
+                    case "PlateId":
+                        CarDetails = CarDetails.Where(t => t.CarPlateId.Contains(SearchString)).ToList();
+                        break;
+                    default:
+                        CarDetails = CarDetails.Where(t => t.Name.Contains(SearchString)).ToList();
+                        break;
+                }
+
+            }
         }
     }
 }

@@ -8,17 +8,14 @@
 <h1>Index</h1>
 <form method="post">
     @Html.DropDownListFor(m => Model.SearchOption, new List<SelectListItem>
-           { new SelectListItem{Text="Male", Value="M"},
-             new SelectListItem{Text="Female", Value="F"}}, "Please select")
+           { new SelectListItem{Text="Name", Value="Name"},
+             new SelectListItem{Text="CarType", Value="CarType"},
+            new SelectListItem{Text="PlateId", Value="PlateId"}}, "Please select")
     <p>
         Title: <input type="text" asp-for="@Model.SearchString" />
         <input type="submit" value="Filter" />
     </p>
 </form>
-@*<form method="get">
-    
-
-</form>*@
 <p>
     <a asp-page="Create">Create New</a>
 </p>
