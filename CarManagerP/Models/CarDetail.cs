@@ -7,7 +7,6 @@ namespace CarManagerP.Models
 {
     public class CarDetail
     {
-		public string ID { set; get; }
 		public int CarNum { get; set; }
 		public string CarPlateId { get; set; }
 		public string CarType { get; set; }
