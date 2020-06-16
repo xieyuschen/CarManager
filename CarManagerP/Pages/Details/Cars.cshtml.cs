@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 using CarManagerP.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
-
+using CarManagerP.Services;
 namespace CarManagerP.Pages.CarDetails
 {
     public class BookInfoModel : PageModel
@@ -23,21 +23,19 @@ namespace CarManagerP.Pages.CarDetails
             //https://localhost:44365/CarDetal/Cardetails
             const string path = "../1.txt";// @"..\车辆基本信息表.csv";
             CarDetails = new List<CarDetail>();
-            FileStream fStream = new FileStream(path, FileMode.Open, FileAccess.Read, FileShare.ReadWrite);
-            StreamReader reader = new StreamReader(fStream);
-            reader.ReadLine();
-            while (!reader.EndOfStream)
+            var lists= FileService.ReadFromFile(path);
+            lists.RemoveAt(0);
+            foreach(var item in lists)
             {
-                var str = reader.ReadLine();
-                var strs=str.Split("\t");
+                var strs = item.Split("\t");
                 CarDetails.Add(new CarDetail
                 {
-                    CarNum=int.Parse(strs[0]),
-                    CarPlateId=strs[1],
-                    CarType=strs[2],
-                    Name= strs[3],
+                    CarNum = int.Parse(strs[0]),
+                    CarPlateId = strs[1],
+                    CarType = strs[2],
+                    Name = strs[3],
                     GearType = strs[4],
-                    Price=float.Parse(strs[5]),
+                    Price = float.Parse(strs[5]),
                     State = strs[6]
                 });
             }
