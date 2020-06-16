@@ -6,3 +6,71 @@
 
 <h1>Statistic</h1>
 
+<form method="post">
+    @Html.DropDownListFor(m => Model.SearchOption, new List<SelectListItem>
+           { new SelectListItem{Text="CarTypeTotalInfo", Value="TotalInfo"},
+             new SelectListItem{Text="BarChart", Value="BarChart"}}, "Please select")
+    <input type="submit" value="Filter" />
+</form>
+
+@if (Model.SearchOption == "TotalInfo")
+{ 
+    <table class="table">
+        <thead>
+            <tr>
+                
+                <th>
+                    @Html.DisplayNameFor(model => model.sta[0].Type)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.sta[0].Total)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.sta[0].free)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.sta[0].rent)
+                </th>
+
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model.sta)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Type)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Total)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.free)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.rent)
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+
+@if (Model.SearchOption == "BarChart")
+{
+    <head>
+        <meta name="viewport" content="width=device-width" />
+        <script src="//cdn.fusioncharts.com/fusioncharts/latest/fusioncharts.js"></script>
+
+        <script src="//cdn.fusioncharts.com/fusioncharts/latest/themes/fusioncharts.theme.fusion.js"></script>
+        <title>ColumnChart</title>
+    </head>
+
+    <body>
+        <form method="post">
+            <div>@Html.Raw(Model.ChartJson)</div>
+            <br />
+        </form>
+    </body>
+}
+
