@@ -14,11 +14,17 @@
 </form>
 
 @if (Model.SearchOption == "TotalInfo")
-{ 
-    <table class="table">
+{
+
+
+<table class="table">
         <thead>
             <tr>
-                
+                <div class="col-lg-1">
+                    <form asp-page-handler="Test" method="post">
+                        <button class="btn btn-default">Test</button>
+                    </form>
+                </div>
                 <th>
                     @Html.DisplayNameFor(model => model.sta[0].Type)
                 </th>

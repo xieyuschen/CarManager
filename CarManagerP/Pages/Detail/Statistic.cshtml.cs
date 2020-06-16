@@ -21,7 +21,7 @@ namespace CarManagerP.Pages.Detail
         [BindProperty]
         public List<CarStatic> sta { get; set; }
 
-
+        
         public string ChartJson { get; internal set; }
         public StatisticModel()
         {
@@ -117,6 +117,10 @@ namespace CarManagerP.Pages.Detail
                         break;
                 }
             }
+        public async Task OnPostTestAsync()
+        {
+
         }
+    }
 
 }
