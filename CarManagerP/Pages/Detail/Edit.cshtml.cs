@@ -8,29 +8,45 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using CarManagerP.Data;
 using CarManagerP.Models;
+using CarManagerP.Services;
 
 namespace CarManagerP.Pages.Detail
 {
     public class EditModel : PageModel
     {
-        private readonly CarManagerP.Data.CarDetailsContext _context;
-
-        public EditModel(CarManagerP.Data.CarDetailsContext context)
-        {
-            _context = context;
-        }
-
         [BindProperty]
         public CarDetail CarDetail { get; set; }
+        public List<CarDetail> Details { get; set; }
+        public EditModel()
+        {
+            const string path = @"..\车辆基本信息表.csv";
+            Details = new List<CarDetail>();
+            var lists = FileService.ReadFromFile(path);
+            lists.RemoveAt(0);
+            foreach (var item in lists)
+            {
+                var strs = item.Split("\t");
+                Details.Add(new CarDetail
+                {
+                    CarNum = int.Parse(strs[0]),
+                    CarPlateId = strs[1],
+                    CarType = strs[2],
+                    Name = strs[3],
+                    GearType = strs[4],
+                    Price = float.Parse(strs[5]),
+                    State = strs[6]
+                });
+            }
 
+        }
         public async Task<IActionResult> OnGetAsync(string id)
         {
             if (id == null)
             {
                 return NotFound();
             }
-
-            CarDetail = await _context.CarDetail.FirstOrDefaultAsync(m => m.ID == id);
+            
+            CarDetail = Details.Find(t=>t.CarNum==int.Parse(id));
 
             if (CarDetail == null)
             {
@@ -48,30 +64,14 @@ namespace CarManagerP.Pages.Detail
                 return Page();
             }
 
-            _context.Attach(CarDetail).State = EntityState.Modified;
+            var t= Details.Find(t => t.CarNum == CarDetail.CarNum);
+            Details.Remove(t);
+            Details.Add(CarDetail);
+            const string path = @"..\车辆基本信息表.csv";
 
-            try
-            {
-                await _context.SaveChangesAsync();
-            }
-            catch (DbUpdateConcurrencyException)
-            {
-                if (!CarDetailExists(CarDetail.ID))
-                {
-                    return NotFound();
-                }
-                else
-                {
-                    throw;
-                }
-            }
-
+            FileService.RewriteFile<CarDetail>(path, Details);
             return RedirectToPage("./Index");
         }
 
-        private bool CarDetailExists(string id)
-        {
-            return _context.CarDetail.Any(e => e.ID == id);
-        }
     }
 }

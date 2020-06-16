@@ -21,5 +21,34 @@ namespace CarManagerP.Services
             reader.Close();
             return lists;
         }
+        public static void AppendFile<T>(string path,IEnumerable<T> lists)
+        {
+            FileStream fStream = new FileStream(path, FileMode.OpenOrCreate);
+            StreamReader reader = new StreamReader(fStream);
+            string contents = reader.ReadToEnd();
+            reader.Close();
+            fStream.Close();
+            FileStream fhelp = new FileStream(path, FileMode.OpenOrCreate, FileAccess.Write);
+            StreamWriter writer = new StreamWriter(fhelp);
+            writer.Write(contents);
+            foreach(var item in lists)
+            {
+                writer.WriteLine(item.ToString());
+            }
+            writer.Close();
+
+        }
+        public static void RewriteFile<T>(string path, IEnumerable<T> lists)
+        {
+            FileStream fhelp = new FileStream(path, FileMode.OpenOrCreate, FileAccess.Write);
+            StreamWriter writer = new StreamWriter(fhelp);
+            foreach (var item in lists)
+            {
+                writer.WriteLine(item.ToString());
+            }
+            writer.Close();
+            fhelp.Close();
+        }
+
     }
 }

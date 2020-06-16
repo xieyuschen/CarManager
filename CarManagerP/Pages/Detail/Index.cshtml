@@ -14,34 +14,34 @@
     <thead>
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.CarDetail[0].CarNum)
+                @Html.DisplayNameFor(model => model.CarDetails[0].CarNum)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.CarDetail[0].CarPlateId)
+                @Html.DisplayNameFor(model => model.CarDetails[0].CarPlateId)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.CarDetail[0].CarType)
+                @Html.DisplayNameFor(model => model.CarDetails[0].CarType)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.CarDetail[0].Name)
+                @Html.DisplayNameFor(model => model.CarDetails[0].Name)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.CarDetail[0].GearType)
+                @Html.DisplayNameFor(model => model.CarDetails[0].GearType)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.CarDetail[0].Price)
+                @Html.DisplayNameFor(model => model.CarDetails[0].Price)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.CarDetail[0].State)
+                @Html.DisplayNameFor(model => model.CarDetails[0].State)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.CarDetail[0].SearchString)
+                @Html.DisplayNameFor(model => model.CarDetails[0].SearchString)
             </th>
             <th></th>
         </tr>
     </thead>
     <tbody>
-@foreach (var item in Model.CarDetail) {
+@foreach (var item in Model.CarDetails) {
         <tr>
             <td>
                 @Html.DisplayFor(modelItem => item.CarNum)
@@ -68,9 +68,9 @@
                 @Html.DisplayFor(modelItem => item.SearchString)
             </td>
             <td>
-                <a asp-page="./Edit" asp-route-id="@item.ID">Edit</a> |
-                <a asp-page="./Details" asp-route-id="@item.ID">Details</a> |
-                <a asp-page="./Delete" asp-route-id="@item.ID">Delete</a>
+                <a asp-page="./Edit" asp-route-id="@item.CarNum">Edit</a> |
+                <a asp-page="./Details" asp-route-id="@item.CarNum">Details</a> |
+                <a asp-page="./Delete" asp-route-id="@item.CarNum">Delete</a>
             </td>
         </tr>
 }
