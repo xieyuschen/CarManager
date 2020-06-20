@@ -1,12 +1,9 @@
-2	E_AW223Q	1	Volkswagen LangYi	1.6Manual	110	y
-3	X_AA323Q	1	Buick Yinglang	1.5Automatic	116	y
 4	X_AA4257	1	Buick Yinglang	1.5Automatic	116	y
 5	E_BC424Q	1	Volkswagen Lingdu	1.4Automatic	181	y
 6	E_BR224Q	2	Chevrolet Meribao	1.5TAutomatic	199	y
 7	G_C3123T	2	Volkswagen Passat	1.8TAutomatic	271	n
 8	G_C3124T	2	Toyota Camry	2.0TAutomatic	160	n
 9	G_C3125T	2	Buick Jun Yue	2.4Automatic	187	n
-10	G_AB1267	2	Volkswagen Passat	1.8TAutomatic	210	n
 11	G_AC1275	3	VolvoS90	2.0TAutomatic	463	n
 12	G_DC128T	3	BMW 3 Series	2.0TAutomatic	596	n
 13	E_A2345Q	3	Cadillac XTS	2.0TAutomatic	512	n
@@ -14,7 +11,4 @@
 16	E_AW12UY	4	Chevrolet Copac	2.4Automatic	221	y
 17	E_AW12TU	4	Bekoncora	1.4TAutomatic	154	n
 18	X_AB323Q	4	Bovo BX5	1.4TAutomatic	127	n
-1	E_AW123Q	1	Volkswagen LangYii	1.6Automatic	135	y
-Automatic	154	n
-18	X_AB323Q	4	Bovo BX5	1.4TAutomatic	127	n
-
+10	G_AB1267	2	Volkswagen Passat	1.8TAutomatic	210	y
